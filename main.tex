@@ -1,0 +1,1998 @@
+%adjust global font size here
+\documentclass[10pt]{article}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{soul}
+\usepackage{avm}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=16mm,
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Adjust paragraph spacing
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{parskip} %package
+\setlength{\parskip}{0.4cm plus4mm minus3mm} % function
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tab#1{\parbox[t]{.3\linewidth}{#1}\hfill}
+
+\usepackage{tablefootnote}
+%% These three packages are to use JTree for ling trees
+\usepackage{pstricks}
+\usepackage{pst-xkey}
+\usepackage{pst-jtree}
+%% These three packages are to use JTree for ling trees
+
+ %hi, watching
+%%%%%%%%%%%%%%%%%%%%%%%%
+% bibliography/citation settings
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[longnamesfirst]{natbib}%
+\bibliographystyle{linquiry2}%
+\setcitestyle{authoryear,round,semicolon,%
+aysep={},yysep={,},notesep={:}}
+\usepackage{natbib}
+\setlength{\bibsep}{0.4pt}
+
+
+% \usepackage{tree-dvips}
+\usepackage[shortlabels]{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% command for switching fonts
+%%%%%%%%%%%%%%%%%%%%%%%%
+% \newenvironment{myfont}{\setmainfont{LinLibertine_R.otf}}%%%%%%for IPA stuff
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% for text strike through effect
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[normalem]{ulem}
+\usepackage{tipa}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set line spacing value
+\renewcommand{\baselinestretch}{1.08}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set up command for word box: [0.4\baselineskip][0.01\baselineskip] == top and bottom height
+\newcommand*{\mybox}[1]{%
+  \framebox{\raisebox{0pt}[0.4\baselineskip][0.01\baselineskip]{%
+    #1}}}
+\usepackage{bbding}
+\usepackage{indentfirst}
+\setlength{\parindent}{0.8cm}
+%\usepackage[utf8]{inputenc}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Keywords command %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\keywordslabel{Keywords: }
+\newcommand\keywords[1]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{2ex}%
+    \settowidth{\leftmargin}{\keywordslabel~}%
+    \setlength{\labelsep}{0pt}%
+    \setlength{\labelwidth}{\leftmargin}%
+    \setlength{\itemindent}{0pt}%
+  }
+  \raggedright\item[\keywordslabel~]#1
+  \end{list}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Adjust margins %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry} %this package is required for adjusting margins
+
+\geometry{margin=1.14in} % this is the function to adjust margins
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set left justification for whole document
+%default = fully justified L/R%%%%
+%\usepackage[document]{ragged2e}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Use these three lines to utilize KPFONTS %%%
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage{kpfonts}
+\usepackage{soul}
+\newenvironment{myfont}{\setmainfont{LinLibertine_R.otf}}%%%%%%for IPA stuff
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{qtree}
+
+
+
+\usepackage{expex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Copy this stuff for the box            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \usepackage[longnamesfirst]{natbib}%
+% \bibliographystyle{linquiry2}%
+\usepackage{tikz}
+\setlength{\parskip}{0.24cm plus3mm minus3mm}
+\usetikzlibrary{fit}
+%%this part creates a command that will put boxes around text
+\newcommand{\tikzmark}[1]{\tikz[remember picture,overlay] \node (#1) {};}
+\makeatletter
+\newcommand{\boxit}{\@ifstar\@boxit\@@boxit}
+\newcommand{\@@boxit}{\@boxit{1}}
+\newcommand\@boxit[1]{%
+\tikz[overlay,remember picture]{
+\def\pointlist{}
+\pgfmathsetmacro{\endpoint}{#1+1}
+\foreach \x in {#1,...,\endpoint}
+{\xdef\pointlist{\pointlist(\x)}}%
+\node[draw,rectangle,yshift=2.6pt,semithick,
+      fit=\pointlist,
+      %adjust margins of box here (adjust inner sep & text depth)
+      inner sep=-2.8pt,text depth=1\baselineskip] {};
+}}
+\makeatother
+%%line width reference here:
+%%Line width options: "line width=<dimension>", and abbreviations "ultra thin" for 0.1pt, "very thin" for 0.2pt, "thin" for 0.4pt (the default width), "semithick" for 0.6pt, "thick" for 0.8pt, "very thick" for 1.2pt, "ultra thick" for 1.6pt.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{gb4e}\noautomath%gloss format
+\title{\vspace{-1.2cm}\textbf{Illusory ergativity in Philippine-type Austronesian languages: Lessons from Formosan Actor Voice \vspace{-2.6em}}}
+\author{}
+\date{}
+
+%\renewenvironment{abstract}{%
+% \hfill\begin{minipage}{1\textwidth}
+% %up line
+% %\rule{\textwidth}{1pt}}
+% %lower line
+% %{\par\noindent\rule{\textwidth}{1pt}
+% \end{minipage}}
+
+\begin{document}
+
+
+\maketitle
+
+%remove abstract title
+\renewcommand{\abstractname}{\vspace{-\baselineskip}}
+
+\begin{abstract}
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.1cm plus2mm minus2mm}
+
+\noindent This paper reexamines a controversial construction in Philippine-type Austronesian languages known as the Actor Voice (AV), which superficially resembles an antipassive and has consequently led to an ergative analysis of Philippine-type languages. I demonstrate that the construction is a true transitive, drawing on evidence from Case-licensing and valency revealed in four understudied constructions shared across Philippine-type Formosan languages. I show accordingly that the ergative-like characteristics of these languages are only illusory, and that the Philippine-type A'-extraction asymmetry is independent of an absolutive-only condition. Finally, I present new evidence from Formosan  that the Philippine-type AV morphology is A'-agreement affix hosted at C, which lends novel empirical support to previous accusative approaches to Philippine-type languages. 
+
+
+
+\keywords{Philippine-type voice system, ergativity, antipassive, Actor voice, raising-to-object, restructuring}
+
+\end{abstract}
+
+
+\section{Introduction}
+\vspace{-1.6mm}
+\noindent
+Over the past few decades, the question of whether Philippine-type Austronesian languages exhibit an ergative or accusative case system has triggered much debate in the literature (e.g. Shibatani 1988; Richards 2000; Pearson 2001; Rackowski \& Richards 2005; Aldridge 2004 et seq.; Paul \& Travis 2006; inter alia.). At the center of the debate is a basic construction known as the Actor Voice (AV) shared across Philippine-type languages, exemplified with the data below from Tagalog (1) and Seediq (2):
+
+
+\begin{exe}
+\ex {\textit{Tagalog}}
+    \begin{xlist}
+		\ex
+		\gll P<um>anaw si Aya. \hspace{62mm}{[1-place]}\\
+             \tikzmark{1}<\textsc{av>}pass.away\tikzmark{2} \textsc{sg.pivot} Aya  \\
+            \trans `Aya passed away.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll H<um>abol si Aya kay Lea. \hspace{49mm}{[2-place]}\\
+             \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{sg.pivot} Aya \textsc{sg.acc} Lea \\
+            \trans `Aya chased Lea.'
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+\vspace{-1mm}
+\begin{exe}
+\ex {\textit{Seediq}}
+    \begin{xlist}
+		\ex
+		\gll K<m>eeki ka Robo. \hspace{70mm}{[1-place]}\\
+             \tikzmark{1}<\textsc{av>}dance\tikzmark{2} \textsc{pivot} Robo\\
+            \trans `Robo is dancing.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll S<m>ebuc $\varnothing$ qhuni=na ka Robo. \hspace{40mm}{[2-place]}\\
+             \tikzmark{1}<\textsc{av>}hit\tikzmark{2} \textsc{CM\textsubscript{1}} tree=\textsc{3sg.poss} \textsc{pivot} Robo  \\
+            \trans `Robo hit his/her tree.'
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+\noindent As (1)-(2) show, an AV-marked construction may contain either a one-place or two-place verb. In a one-place construction, the sole argument of the sentence---regardless of being agent-like (2a) or theme-like (1a)---bears a special marking `Pivot' (\textit{si} in Tagalog and \textit{ka} in Seediq), whose presence indicates that the phrase is eligible for A'-extraction. In a two-place construction ((1b), (2b)), the external argument is Pivot-marked; the internal argument bears a distinct case-marker, labeled as CM\textsubscript{1}. 
+
+\newpage
+As described, in an AV-marked clause, only the Pivot-marked external argument is eligible for A'-extraction. The CM\textsubscript{1}-marked internal argument cannot be extracted, as seen in (3)-(4):
+
+
+\begin{exe}
+\ex {\textit{A'-extraction in Tagalog 2-place AV clause}}
+    \begin{xlist}
+		\ex
+		\gll Sino ang h<um>abol kay Lea? \hspace{23mm}{[\textit{external argument (Pivot) extraction}]}\\
+            who \textsc{lk} \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{sg.cm\textsubscript{1}} Lea  \\
+            \trans `Who chased Lea?'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll *Ano ang h<um>abol si Aya? \hspace{11mm}{[\textit{*internal argument (non-Pivot) extraction}]}\\
+            what \textsc{lk} \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{sg.pivot} Aya  \\
+            \trans (intended: `What did Aya chase?')
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+\vspace{-2mm}
+
+\begin{exe}
+\ex {\textit{A'-extraction in Seediq 2-place AV clause}}
+    \begin{xlist}
+		\ex
+		\gll Ima ka s<m>ebuc $\varnothing$ huling=na? \hspace{18mm}{[\textit{external argument (Pivot) extraction}]}\\
+            who \textsc{lk} \tikzmark{1}<\textsc{av>}hit\tikzmark{2} \textsc{cm\textsubscript{1}} dog=\textsc{3sg.poss}  \\
+            \trans `Who hit his/her dog?'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll *Maanu ka s<m>ebuc ka Robo? \hspace{13mm}{[\textit{*internal argument (non-Pivot) extraction}]}\\
+            what \textsc{lk} \tikzmark{1}<\textsc{av>}hit\tikzmark{2} \textsc{pivot} Robo  \\
+            \trans (intended: `What did Robo hit?')
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+
+
+Unlike the Actor voice, a Patient Voice (PV) affix in Philippine-type languages is compatible only with two-place verbs (5)-(6). In such clauses, the internal argument bears Pivot-marking, and the external argument carries a third type of marking, labeled as CM\textsubscript{2} ((5b), (6b)). 
+
+\begin{exe}
+\ex {\textit{PV constructions: Tagalog}}
+    \begin{xlist}
+    	\ex \gll *P<in>anaw si Aya. \hspace{+6.5cm}{[*1-place]}\\
+            \textsc{<pv.prf>}pass.away \textsc{pn.pivot}	Aya	\\
+            \trans (intended: `Aya passed away.')
+	\ex \gll H<in>abol ni Aya si Lea.\hspace{+5.5cm}{[2-place]}\\
+            \textsc chase\textsc{<pv.prf>} \textsc{pn.cm\textsubscript{2}}	Aya	\textsc{pn.pivot}	Lea\\
+            \trans `Aya chased Lea.'
+            %\boxit 
+        	\end{xlist}
+            \end{exe}
+
+\begin{exe}
+\ex {\textit{PV constructions: Seediq}}
+    \begin{xlist}
+    	\ex \gll *K<n>eeki ka Robo. \hspace{+7.5cm}{[*1-place]}\\
+           dance\textsc{<pv.prf>} \textsc{pivot} Robo	\\
+            \trans (intended: `Robo danced.')
+            %\boxit 
+	\ex \gll S<n>ebuc na Robo ka huling=na. \hspace{+5.2cm}{[2-place]}\\
+            \textsc hit\textsc{<pv.prf>} \textsc{cm\textsubscript{2}} Robo	\textsc{pivot} dog=\textsc{3sg.poss}\\
+            \trans `Robo hit his/her dog.'
+            %\boxit 
+        	\end{xlist}
+            \end{exe}
+
+\noindent  As predicted, in a PV-marked clause, only the Pivot-marked internal argument is accessible to A'-extraction, as seen in the Tagalog examples below (7a-b).
+
+\begin{exe}
+\ex {\textit{A'-extraction in Tagalog PV clause}}
+    \begin{xlist}
+		\ex
+		\gll Sino ang h<in>abol ni Lea? \hspace{19mm}{[\textit{internal argument (Pivot) extraction}]}\\
+            who \textsc{lk} \tikzmark{1}<\textsc{pv.prf>}chase\tikzmark{2} \textsc{sg.cm\textsubscript{2}} Lea  \\
+            \trans `Who did Lea chase?'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll *Sino ang h<in>abol si Lea? \hspace{12mm}{[\textit{*external argument (non-Pivot) extraction}]}\\
+            who \textsc{lk} \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{sg.pivot} Lea  \\
+            \trans (intended: `Who chased Lea?')
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+At first glimpse, the argument-marking strategy manifested above follows the ergative line. Assuming that the PV construction is the basic transitive (given its incompatibility with intransitive verbs ((5a), (6a))), the fact that its internal argument patterns with the sole argument in monovalent AV clauses ((1a), (2a)) in both argument marking and A'-extraction eligibility suggests that Philippine-type Austronesian languages manifest syntactic ergativity. This analysis is illustrated in the table in (8). 
+
+
+\begin{exe}
+\ex {\textit{The ergative view of Philippine-type languages}}\\
+\begin{table}[h]
+\begin{tabular}{llll}
+     & a. 1-place AV clauses     & b. 2-place AV clauses & c. PV clauses      \\\midrule
+    external argument   & {\bf Pivot} ("\emph{absolutive}") &  {\bf Pivot} ("\emph{absolutive}") & CM\textsubscript{2} \hspace{+1mm}("\emph{ergative}")                      \\
+    internal argument & -- --   & CM\textsubscript{1} \hspace{+1mm}("\emph{oblique}")      & {\bf Pivot} ("\emph{absolutive}") 
+    
+    \\\midrule
+    \textit{assumption}          & intransitive   &  ``antipassive''  & basic transitive
+\end{tabular}
+\end{table}
+\end{exe}
+\vspace{-.6cm}
+
+ \noindent The baseline of this approach, as seen in (8), is that two-place AV constructions (8b) must be syntactically intransitive, according to which their external argument is an S, which patterns with PV objects at both the morphological and syntactic levels, as does the sole argument in monovalent AV constructions (8a). Over the past several decades, this line of analysis has been put forward by a number of researchers, who maintain that two-place AV clauses (8b) are antipassive constructions that contain a non-core oblique object (e.g. De Guzman 1976; Payne 1982; Gerdts 1988; Mithun 1994; Aldridge 2004, 2008, 2012; Liao 2004; Huang 2005; Chang 2011), illustrated with the Tagalog and Seediq examples (9a-b).
+
+
+\vspace{-1mm}
+\begin{exe}
+\ex {\textit{The antipassive approach to Philippine-type AV constructions}}
+    \begin{xlist}
+			\ex{\textit{Tagalog}}
+		\gll H<um>abol si Aya kay Lea. \hspace{50mm}{[``antipassive'']}\\
+             \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{pivot} Aya \textsc{``sg.obl''} Lea \\
+            \trans `Aya chased Lea.'
+            \boxit
+			\ex{\textit{Seediq}}
+		\gll S<m>ebuc $\varnothing$ Temu ka Pawan. \hspace{50mm}{[``antipassive'']}\\
+             \tikzmark{1}<\textsc{av>}hit\tikzmark{2} \textsc{``obl''} Temu \textsc{pivot} Pawan  \\
+            \trans `Pawan hit Temu.'
+            \boxit
+         
+	\end{xlist}
+\end{exe}
+
+\vspace{-3mm}
+This analysis, however, faces a number of empirical and theoretical issues. First, the object in canonical antipassive constructions can be freely omitted (Dixon 1979, 1994; Campbell 2000; Cooreman 1994; Anderson 1976; Polinsky 2016), as seen with the examples below from Kaqchikel and Chukchi (10a-b). Omission of the internal argument in Philippine-type AV constructions, on the other hand, results in ungrammaticality (11a-b) (see, e.g., Rackowski 2002; Foley 2008; Paul \& Travis 2006; Chen 2017).\footnote{Aldridge (2012), in presenting her antipassive analysis of Tagalog two-place AV clauses, reports that the internal argument of Tagalog AV clauses can be freely omitted with one supporting example with the verb \textit{k<um>ain} `eat.' According to four Tagalog speakers I consulted, such flexibility is bound to this specific verb's valency ambiguity, and does not apply to two-place verbs in general.} 
+
+\vspace{-2mm}
+\begin{exe}
+\ex 
+    \begin{xlist}
+		\ex
+		\gll Pero r\myfont{ï}n y-i-tz'et-o (r-ichin). \hspace{39mm}{\textit{Kaqchikel}}\\
+            but \textsc{1sg} \textsc{incompl-1sg.abs}-\tikzmark{1}watch-\textsc{ap\tikzmark{2}} (\textsc{3sg-obl}) \\
+            \trans `But I'm watching (him/it).' (Heaton 2017:351)
+  \boxit
+            \ex
+            \gll \myfont{ʔə}tt-ən ine-piri-\myfont{ɣʔ}i (melotal\myfont{ɣ}-t\myfont{ə}). \hspace{49mm}{\textit{Chukchi}}\\
+           dog-\textsc{abs} \tikzmark{1}\textsc{ap}-catch\tikzmark{2}-\textsc{aor.3sg} (hare-\textsc{dat})  \\
+            \trans `The dog caught (a/the hare).' (Polinsky 2017:7)
+       \boxit
+            
+            
+            \end{xlist}
+            \end{exe}
+
+\vspace{-4mm}
+\begin{exe}
+\ex {\textit{Philippine-type two-place AV clauses}}
+    \begin{xlist}
+		\ex
+		\gll K<em>etket i Atrung *(kana patraka). \hspace{37mm}{\textit{Puyuma}}\\
+            \tikzmark{1}<\textsc{av>}cut\tikzmark{2} \textsc{sg.pivot} Atrung *(\textsc{df.cm\textsubscript{1}} meat)  \\
+            \trans `Atrung cut *(the meat).'
+            \boxit
+            \ex
+            \gll H<um>abol si Aya *(kay Lea).
+            \hspace{49mm}{\textit{Tagalog}}\\
+            \tikzmark{1}<\textsc{av>}chase\tikzmark{2} \textsc{sg.pivot} Aya *(\textsc{sg.acc} Lea)  \\
+            \trans `Aya chased *(Lea).
+            \boxit
+            
+            
+            \end{xlist}
+            \end{exe}
+
+
+
+ Second, antipassive objects are crosslinguistically observed to be indefinite/non-specific (Dixon 1979, 1994; Anderson 1976; Cooreman 1994; Manning 1998; Campbell 2000; Heaton 2017). AV objects in various Philippine-type languages, however, can be definite and/or specific, as in (12a-c) (see Foley (2008), Paul \& Travis (2006), Chen (2017) for details). 
+ 
+ \begin{exe}
+\ex {\textit{Philippine-type two-place AV clauses}}
+    \begin{xlist}
+		\ex
+		\gll Nanapahan'i Sahondra \textbf{ity} \textbf{hazo} ity nu antsy. \hspace{37mm}{\textit{Malagasy}}\\
+            \textsc{pst.av.}cut Sahondra \textbf{this} \textbf{tree} this \textsc{det} knife\\
+            \trans `Sahondra cut this tree with the knife.' (Paul \& Travis 2006:316)
+            
+            \ex
+            \gll K<um>an si Juan nog \textbf{saging} \textbf{koyon}.
+            \hspace{35mm}{\textit{Subanon}}\\
+            \tikzmark{1}<\textsc{av.irr>}eat\tikzmark{2} \textsc{sg.pivot} Juan \textsc{sg.cm\textsubscript{1}} \textbf{banana} \textsc{\textbf{det}}  \\
+            \trans `Juan will eat that banana.' (O'Brien 2016:11)
+            
+            \ex
+            \gll Mi-takaw cingra \textbf{t-una} \textbf{paysu}.
+            \hspace{54mm}{\textit{Amis}}\\
+            \textsc{av-}steal \textsc{3sg.pivot} \textsc{cm}\textsubscript{1}-that money  \\
+            \trans `He stole that money.' (ODFL)
+        \ex
+        \gll Maya k<em>adiad a \textbf{ku=tatekelen}. \hspace{51mm}{\textit{Paiwan}}\\
+        \textsc{neg} \textsc{<av>}stir \textsc{lk} \textsc{\textbf{1sg.poss=}drink}\\
+        \trans `Don't stir my drink.' (ODFL)
+            
+            \end{xlist}
+            \end{exe}
+ 
+ 
+ 
+ Finally, the fact that Philippine-type two-place AV constructions do not bear any affixal morphology distinct from monovalent AV clauses ((13a-b), see also (1)-(2)) entails an undesirable assumption, that antipassivization in Philippine-type languages are morphologically unmarked, whereas their transitive counterpart bears a specific transitive marker (the PV affix). Such an argument-marking strategy is typologically rare, if not unknown. 
+ 
+ \begin{exe}
+ \ex{\textit{Puyuma}}
+ \begin{xlist}
+\ex 
+\gll s\textbf{<em>}enay na bulraybulrayan. \hspace{55mm}{[1-place]}\\
+    \textsc{\textbf{<av>}}sing \textsc{df.pivot} young.lady\\
+    \trans `The young lady sang.'
+    \ex
+    \gll s\textbf{<em>}aletra' na bulraybulrayan kana walak. \hspace{31mm}{[2-place]}\\
+    \textsc{\textbf{<av>}}slap \textsc{df.pivot} young.lady \textsc{df.cm}\textsubscript{1} child\\
+    \trans `The young lady slapped the child.'
+
+     
+ \end{xlist}
+ 
+ \end{exe}
+ 
+In this paper, I reexamine the construction at the center of the debate, and demonstrate that it is a true transitive, rather than an antipassive. Support for this claim comes from four understudied constructions shared by four Philippine-type languages (Tagalog, Puyuma, Amis, Seediq) under different Austronesian primary branches. Finally, I present new evidence from Formosan for a proposal held by previous accusative analyses of Philippine-type languages, that Philippine-type AV morphology marks an A'-agree relation between ([u\textsc{top}]) and the nominative DP in a clause (Richards 2000; Pearson 2001, 2005; Rackowski \& Richards 2005). I conclude accordingly that Philippine-type Austronesian languages are best analyzed as possessing an accusative case system.
+
+The remainder of the paper is organized as follows. In the next section, I review the core assumptions of the competing analyses, and lay out their predictions for the behavior of two-place AV constructions. In section 3, I examine the distribution of the Case that marks AV objects, and demonstrate that this case marker may appear in canonical accusative positions where oblique Case is predicted to be unavailable. In section 4, I turn to an underexplored detransitivizing operation found in three Philippine-type Formosan languages, which reinforces the transitive analysis of two-place AV clauses. Finally, in section 5, I reconsider the nature of Philippine-type AV morphology, showing that it is best analyzed as A'-agreement morphology hosted at C. Section 6 summarizes and concludes.
+
+\section{The competing analyses and their predictions for the nature of Philippine-type AV clauses}
+
+\noindent
+ Philippine-type languages are characterized by four traits, outlined in (14a-d). The majority of languages of this type are spoken in the Philippines, northern Borneo, and northern Sulawesi, as well as the Austronesian homeland, Taiwan.
+
+
+\begin{exe}
+\ex 
+    \begin{xlist}
+\ex Each lexical verb must bear one of four types of affixal morphology (\textit{Actor Voice} (AV), \textit{Patient Voice} (PV), \textit{Locative Voice} (LV), or \textit{Circumstantial Voice} (CV)).
+\ex In each clause, there must be one and only one phrase that bears the Pivot marker; a non-Pivot marked phrase carries a fixed case-marking (depending on its thematic role) regardless of voice, as summarized in (8).\footnote{While the exact morphological forms of Pivot, CM\textsubscript{1}, and CM\textsubscript{2} differ from one language to another, the argument-marking pattern described above is consistently observed across Philippine-type languages. Some Philippine-type languages employ portmanteau case markers that indicate both the case status and the definiteness and/or number of a phrase. In Tagalog, CM\textsubscript{1} and CM\textsubscript{2} are formally distinguished only in personal name or pronominal marking, but not in common noun marking (which is a result of independent case syncretism). See Appendix I for the complete case paradigm of the four target languages. }
+\ex The selection of the Pivot is crossreferenced by voice morphology on the verb.
+\ex In clauses that contain an instance of A'-extraction, voice morphology must indicate the extracted phrase as the Pivot.\footnote{The set of Tagalog examples below illustrates the traits in (12). Locative Voice and Circumstantial Voice are not discussed in this paper, as they are not directly relevant to the current focus.
+
+\vspace{-1mm}
+\begin{exe}
+\ex {\textit{Tagalog}}
+    \begin{xlist}
+		\ex\label{chasedryan} 
+		\gll b<um>ili si Ivan ng keyk mula kay Aya para kay Juan.\\
+            buy\bf<\textsc{av}>  \tikzmark{1}\textsc{pn.pivot}  Ivan\tikzmark{2} \textsc{cm\textsubscript{2}} cake P\textsubscript{1} 	\textsc{pn.cm\textsubscript{2}}	Aya P\textsubscript{2} \textsc{pn.cm\textsubscript{2}}	Juan \\
+            \trans `\textbf{Ivan} bought cake from Aya for Juan.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+		\ex \gll bi-bilih-in ni Ivan ang keyk mula kay Aya para kay Juan.\\
+            \textsc{cont}-buy-\bf\textsc{pv} \textsc{pn.pivot}	Ivan	\tikzmark{1}\textsc{pivot}	cake\tikzmark{2} P\textsubscript{1} 	\textsc{pn.cm\textsubscript{2}}	Aya P\textsubscript{2} \textsc{pn.cm\textsubscript{2}}	Juan\\
+            \trans `Ivan will buy \textbf{}cake from Aya for Juan.'
+            \boxit 
+    	\ex \gll bi-bilih-an ni Ivan ng keyk si Aya para kay Juan.\\
+            \textsc{cont}-buy-\bf\textsc{lv} \textsc{pn.pivot}	Ivan	\textsc{cm1}	cake  \tikzmark{1}\textsc{pn.pivot} Aya\tikzmark{2} P\textsubscript{2} \textsc{cm2}	Juan\\
+            \trans `Ivan will buy cake from \textbf{Aya} for Juan.'
+            \boxit
+        \ex \gll i-bi-bili ni Ivan kay keyk mula kay Aya si Juan.\\
+            \textsc{\bf cv}-\textsc{cont}-buy \textsc{pn.cm1}	Ivan	\textsc{cm2} cake P\textsubscript{1} \textsc{cm2} Aya \tikzmark{1}\textsc{pn.pivot} Juan\tikzmark{2}	\\
+            \trans `Ivan will buy cake from Aya for \textbf{Juan}.'
+            \boxit
+	\end{xlist}
+\end{exe}}	
+\end{xlist}
+\end{exe}
+
+
+ The grammatical system described above, conventionally called a \textit{Philippine-type voice system}, is attested in nine of the ten Austronesian primary branches and reconstructable to Proto-Austronesian (Wolff 1973; Ross 2002; Blust 2013).  The four target languages to be discussed this paper, Tagalog, Puyuma, Amis, and Seediq, each exhibit Philippine-type syntax and belong to a different Austronesian primary branch. Their shared morphosyntax can thus be uncontroversially identified as prototypical of the Philippine-type voice system. While Tagalog is relatively well-studied, Puyuma, Amis, and Seediq are three underexplored endangered languages spoken in Taiwan, each of which provides important evidence for the accusative analysis of Philippine-type AV constructions. Except where otherwise indicated, the data presented in this paper come from primary fieldwork on Manila Tagalog, Nanwang Puyuma, Central Amis, and Tgdaya Seediq.
+
+In what follows, I begin with an overview of previous analyses of the AV construction (2.1-2.2), and lay out their predictions for its behavior (2.3).
+
+
+\subsection{AV construction under the ergative approach to Philippine-type languages}
+
+\noindent As foreshadowed in section 1, the baseline assumption of the ergative view of Philippine-type languages is that the Actor Voice and Patient Voice affixes are transitivity markers that realize different flavors of Voice. The former marks intransitive clauses and the latter transitive clauses, as in (15).\footnote{In this paper, I adopt the division of Voice and \textit{v} (e.g. Kratzer 1996; Pylkkänen 2002; Alexiadou et al. 2006; Schäfer 2008; Harley 2013; Legate 2014), and assume that Voice is the locus of voice (active vs. passive) and the licensor of ergative and accusative Case, whereas \textit{v} is responsible for introducing causative semantics and verbalizing the roots. As a Voice/\textit{v} distinction is not adopted in previous work on the Philippine-type voice system, the term `Voice' used in this paper is equivalent to \textit{v} in Richards (2000), Rackowski \& Richards (2005), Pearson (2001, 2005), and Aldridge (2004 \textit{et seq.})}
+
+\begin{exe}
+\ex 
+    \begin{xlist}
+\ex AV affix: reflex of intransitive Voice 
+\ex PV affix: reflex of transitive Voice\hspace{+3.cm}(Aldridge 2004, 2008, 2012)
+\end{xlist}
+\end{exe}
+
+Under the assumptions above, the Pivot marker is assumed to mark absolutive Case from T assigned to the sole argument in AV clauses and the internal argument in PV clauses---under the assumption that transitive subjects are inherently Case-licensed with ergative Case prior to structural Case-licensing.\footnote{Aldridge (2004) proposes two subtypes of ergativity for Philippine-type languages. In T-type (`high absolutive') languages, the source of absolutive Case is claimed to be unitarily T, whereas in \textit{v-}type (`low absolutive') languages, the source of \textsc{abs} case is claimed to be T in intransitive clauses (i.e. AV clauses) and \textit{v} (Voice) in transitive clauses (i.e. PV/LV/CV clauses). As this distinction has been eliminated in Aldridge (2012, 2017), I stick to her later analysis.} The case marker borne by the alleged antipassive object (i.e. CM\textsubscript{1}), on the other hand, is assumed to realize lexical oblique Case from the lexical verb (V) along with $\theta$-assignment. Finally, PV-marked clauses (the putative basic transitives) are additionally assumed to bear an EPP feature on Voice, which triggers object shift to an outer specifier of VoiceP. This analysis is summarized in (16) and illustrated in (17).
+
+
+\begin{exe}
+\ex 
+    \begin{xlist}
+\ex Pivot marker: structural absolutive Case from T
+\ex CM\textsubscript{1}: lexical oblique Case from V\textsuperscript{0}\
+\ex CM\textsubscript{2}: inherent ergative Case from transitive Voice, which bears an EPP feature
+\end{xlist}
+\end{exe}
+
+% collapsed tree examples
+\begin{exe}
+\ex{\textit{Case-licensing in Philippine-type AV and PV constructions (Aldridge 2004 et seq.)}}\\
+\begin{minipage}[t]{.4\textwidth}
+\begin{enumerate}
+\item[a.] \textit{2-place AV clause}\smallskip \\
+\scalebox{.95}{
+\jtree[xunit=2.8em, yunit=1em]
+\! = {TP}
+    :{{\rnode{A1}T}}                                        {VoiceP}
+    :{{\rnode{A2}DP\textsubscript{\textsc{ea}}}}             {Voice'}
+    :{{Voice\textsubscript{\textsc{\{intr\}}}}}!a {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{{\rnode{A3}V}}                                        {{\rnode{A4}DP\textsubscript{\textsc{ia}}}}.
+    \!a = <vert>{\textsc{\textbf{av affix}}}. 
+    
+    \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-90,
+             ncurv=1]{->}{A3}{A4}
+             \mput*{\textsc{obl}}
+             
+    \nccurve[angleA=-150,
+             angleB=-90,
+             ncurv=1]{->}{A1}{A2}
+             \mput*{\textsc{abs}}
+\endjtree
+}
+    \end{enumerate}
+\end{minipage}% This must go next to `\end{minipage}`
+\begin{minipage}[t]{.4\textwidth}
+\begin{enumerate}
+ \item[b.] \textit{PV clause}\smallskip\\
+  \scalebox{0.87}{
+\jtree[xunit=2.8em, yunit=1em]
+\! = {TP}
+    :{{\rnode{A5}T}}                            {VoiceP}
+    :{{\rnode{A6}{DP\textsubscript{\textsc{ia}}}}} {Voice'}
+    :{{\rnode{A4}DP\textsubscript{\textsc{ea}}}}             {Voice'}
+    :{{\rnode{A3}{Voice\textsubscript{\textsc{\{tr\}}}}\textsc{[epp]}}}!a {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}                                         {\rnode{A2}{(DP)}}.
+    \!a = <vert>{\textsc{\textbf{pv affix}}}. 
+     \ncbar[angleA=-90,angleB=-90,armA=1em, armB=1em,
+    linearc=0ex %control curvature of corners
+    ]{->}{A2}{A6} %draw an arrow connecting two nodes
+    \mput*{object shift}
+
+    \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-170,
+             ncurv=1]{->}{A3}{A4}
+              \mput*{\textsc{erg}}
+     \nccurve[angleA=-150,
+             angleB=-90,
+             ncurv=1]{->}{A5}{A6}  
+            \mput*{\textsc{abs}} 
+   
+\endjtree
+}
+
+  \end{enumerate}
+\end{minipage}
+\end{exe}
+   
+\smallskip
+   
+Under this analysis, the `Pivot-only' extraction constraint in these putative syntactically ergative languages is assumed to manifest an Attract Closest Condition (Aldridge 2004 \textit{et seq.}), according to which the extraction asymmetry between AV and PV constructions is due to the presence of the putative object shift in PV constructions and its absence in AV constructions. The internal argument in PV clauses is promoted to the highest spec position of VoiceP, making it the only argument eligible for extraction. This analysis is illustrated in (17a-b). 
+
+
+As seen in (17), this approach to  Philippine-type languages  relies crucially on the alleged transitivity distinction between AV- and PV-marked clauses. The validity of this analysis therefore boils down to the question of whether two-place AV constructions are indeed syntactically intransitive. The prediction of this analysis will be further discussed in 2.3.
+
+\subsection{AV constructions under the accusative approach to Philippine-type languages}
+\vspace{-1mm}
+\noindent  
+The accusative approach to Philippine-type languages (e.g. Shibatani 1988; Chung 1994; Richards 2000; Pearson 2001, 2005; Rackowski 2002; Rackowski \& Richards 2005; Chen 2017) differs from the ergative analysis in two fundamental regards. First, `Pivot' (e.g. \textit{ang/si} in Tagalog) is analyzed as a marker of information structure status (topic), rather than the morphological realization of absolutive Case. Second, Philippine-type voice affixes are viewed as the spell-out of an abstract A'-agree relation between [u\textsc{top]} and the topic phrase in the clause, which inflects for the Case of the topic. An `AV' affix is claimed to realize A'-agreement with the nominative DP, and a `PV' affix that with the accusative DP (Rackowski \& Richards 2005)\footnote{See also Chung (1994, 1998) and Pearson (2001, 2005) for a similar proposal.}. 
+
+According to this analysis, Philippine-type languages possess a nominative-accusative case system. Nominative Case is realized as CM\textsubscript{2} and accusative Case as CM\textsubscript{1}, whereas `Pivot' is a topic marker that overrides morphological case. This analysis is illustrated in (18). 
+
+
+
+
+\begin{exe}
+\ex {\textit{The accusative approach to the case system of Philippine-type languages}}\vspace{-1mm}
+\begin{table}[h]
+\hspace{+1.2cm}\begin{tabular}{lll}
+     & a. actor voice       & b. patient voice      \\\midrule
+    external argument   & \st{CM}\textsubscript{2}("\emph{\st{nominative}}")  {\bf Pivot}  & CM\textsubscript{2}("\emph{nominative}")  \\
+    internal argument   & CM\textsubscript{1} ("\emph{accusative}")      & \st{CM}\textsubscript{1}("\emph{\st{accusative}}") {\bf Pivot}  \\\midrule
+      \textit{assumption of the voice affix}           & \textsc{nom}-agreement          & \textsc{acc}-agreement     \\ 
+\end{tabular}
+\end{table}
+\end{exe}
+\vspace{-5mm}
+
+According to this analysis, the distributional difference between the Pivot markers in AV and PV clauses simply reflects a difference in topic placement. The presence of `AV'-morphology indicates that the sentence bears a nominative topic, whereas that of `PV'-morphology suggests that the sentence possesses an accusative topic, as summarized in (19a-e).
+
+
+\begin{exe}
+\ex 
+    \begin{xlist}
+\ex Pivot marker: a marker of information structure status (topic)
+\ex CM\textsubscript{1}: nominative Case from T
+\ex CM\textsubscript{2}: accusative Case from Voice
+\ex AV affix: the spell-out of an A'-agree relation between [u\textsc{top]} and nominative topic
+\ex PV affix: the spell-out of an A'-agree relation between [u\textsc{top]} and accusative topic
+
+\end{xlist}
+\end{exe}
+ 
+Under (19), the Philippine-type `Pivot-only' constraint in A'-extraction is viewed as a result of \textit{wh}-extraction feeding topic-agreement, with slight differences among scholars (see, e.g. Rackowski 2002; Rackowski \& Richards 2005; Pearson 2001, 2005; Chen 2017). There is nevertheless consensus that  this extraction restriction is independent of an Attract Closest Constraint. This analysis will be further discussed in section 5.
+
+\subsection{Predictions of the competing analyses}
+
+\noindent The table in (20) summarizes the main assumptions of the competing analyses. As seen below, a main difference between the two approaches lies in their assumption regarding the case assigned to AV objects (CM\textsubscript{1}). Under the ergative analysis, CM\textsubscript{1} marks oblique Case from V (21a); under the accusative analysis, it realizes accusative Case from Voice (21b). 
+
+\begin{exe}
+\ex {\textit{Main assumptions of the competing analyses}}\vspace{-1mm}
+\begin{table}[h]
+\hspace{+1.2cm}\begin{tabular}{lll}
+     & a. ergative analysis      & b. accusative analysis      \\\midrule
+    Pivot marker   & \textsc{abs} from T  &
+  topic marker\\
+    CM\textsubscript{1}   &  \textbf{\textsc{obl} from V} &  \textbf{\textsc{acc} from Voice} \\
+    CM\textsubscript{2} &  \textsc{erg} from transitive Voice &  \textsc{nom} from T \\\midrule
+    AV affix & reflex of intransitive Voice & A'-agreement between [u\textsc{top}] and \textsc{nom dp}\\
+    PV affix & reflex of transitive Voice & A'-agreement between [u\textsc{top}] and \textsc{acc dp}\\\midrule
+\end{tabular}
+\end{table}
+\end{exe}
+
+
+
+
+
+\begin{exe}
+\ex
+\begin{minipage}[t]{.4\textwidth}
+\begin{enumerate}
+\item[a.] \textit{Oblique Case-licensing}\vspace{+2mm} \\
+ \scalebox{0.84}{  
+\jtree[xunit=2.8em, yunit=.8em]
+\! = {VoiceP}
+    :{DP\textsubscript{\textsc{ea}}}             {. . .}
+    :{Voice}                     {. . .}
+    :{{\textit{v'}}}                             {VP}
+    :{{\rnode{A1}V}}                             {\rnode{A2}{DP\textsubscript{\textsc{ia}}}}.
+  \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-120,
+             angleB=-150,
+             ncurv=1]{->}{A1}{A2}
+             \mput*{\textsc{obl}}
+\endjtree
+}
+    \end{enumerate}
+\end{minipage}% This must go next to `\end{minipage}`
+\begin{minipage}[t]{.4\textwidth}
+\begin{enumerate}
+ \item[b.] \textit{Accusative Case-licensing}\vspace{+2mm}\\
+ \scalebox{0.84}{   %put this to scale objects/figures
+\jtree[xunit=2.8em, yunit=.8em]
+\! = {VoiceP}
+    :{DP\textsubscript{\textsc{ea}}}             {Voice'}
+    :{{\rnode{A1}{Voice}}}         {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}                                        {\rnode{A2}{DP\textsubscript{\textsc{ia}}}}.
+
+  \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{->}{A1}{A2}
+             \mput*{\textsc{acc}}
+
+\endjtree
+}
+    \end{enumerate}
+    
+\end{minipage}% This must go next to `\end{minipage}`\end{exe}
+
+\end{exe}
+
+\bigskip
+
+Oblique Case, as a type of nonstructural Case, is licensed only in head-complement relation along with $\theta$-licensing (Woolford 2006; Bolbajik 1998; Aldridge 2004 \textit{et seq.}). Its distribution is therefore predicted to be restricted to the internal argument position. Accusative Case, as a type of structural Case, may appear in either the internal argument position or the embedded external argument position, and is predicted to be absent in constructions that bear a deficient Voice incapable of Case-licensing. In the next section, I examine the behavior of CM\textsubscript{1} in three understudied constructions shared among Philippine-type languages, and demonstrate that CM\textsubscript{1} shows the hallmarks of structural accusative Case.
+
+
+\section{Two-place AV constructions as true transitives: Evidence from Case-licensing}
+
+\noindent The distribution of CM\textsubscript{1} in constructions other than simple clauses (productive causatives (3.1), raising-to-object (3.2), and restructuring constructions (3.3)) reveals that this case marker may appear in canonical accusative positions where lexical oblique Case is predicted to be unavailable.   
+
+\subsection{Productive causatives: ECM behavior of the putative oblique case}
+
+\noindent Exceptional Case marking (ECM) configuration (Chomsky 1981, 1986) is standardly considered a core trait of structural accusative Case, in which the external argument in a nonfinite embedded clause can be Case-licensed with accusative Case from the matrix Voice head, as in (22). 
+
+
+\begin{exe}
+\ex
+
+ \scalebox{0.94}{   %put this to scale objects/figures
+\jtree[xunit=2.8em, yunit=.8em]
+\! = {VoiceP}
+    :{DP\textsubscript{\textsc{ea}}}             {Voice'}
+    :{{\rnode{A1}{Voice}}}         {\textit{v}P}
+    :{{\textit{v'}}}                {VoiceP}
+    :{{\rnode{A2}DP\textsubscript{\textsc{ea}}}}          {. . . }.
+
+  \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{->}{A1}{A2}
+             \mput*{\textsc{acc}}
+
+\endjtree
+}
+
+\end{exe}
+
+\noindent This results in shared case-marking between direct objects in simple clauses and external arguments of nonfinite embedded clauses, as seen with the examples of English and Spanish causatives below (23)-(24):
+
+\begin{exe}
+\ex{\textit{English}} 
+\begin{xlist}
+\ex John hugged \textbf{her}.
+\ex John ask [\{\textbf{{her/*she}}\} to do exercise].
+
+\end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex{\textit{Spanish}}
+\begin{xlist}
+\ex
+\gll Juan \textbf{la} ama.\\
+Juan \textsc{\textbf{3sg.acc}} love\\
+\trans `Juan loves her.'
+\ex 
+\gll Juan \textbf{la} hiza [rechazar el premio].\\
+Juan \textsc{\textbf{3sg.acc}} made [reject.\textsc{inf} the prize]\\
+\trans `John made her reject the prize.' (Sheehan \& Cyrino 2016:280)
+
+
+\end{xlist}
+\end{exe}
+
+\noindent Importantly, an ECM configuration is impossible with lexical oblique Case, which is assigned only in head-complement relation to the internal argument position (21a). If CM\textsubscript{1} in Philippine-type languages shows an ECM pattern, then this observation will lend direct support to the accusative analysis of CM\textsubscript{1}.
+
+This prediction is indeed borne out. Across Philippine-type Austronesian languages, when a causative of a transitive is AV-marked (henceforth AV-causative), both the causee and the theme of the caused event (henceforth causand) bear CM\textsubscript{1}-marking, as do the alleged antipassive objects in AV-marked simple clauses, as seen in (25)-(28).
+
+
+\begin{exe}
+\ex {\textit{Tagalog}}
+    \begin{xlist}
+		\ex\label{causative 1} 
+		\gll Nag-pa-habol ako ng aso sa pusa.\\
+            \textsc{av.prf}-\textsc{cau}-chase \textsc{1sg.pivot} \tikzmark{1}\textsc{id.cm}\textsubscript{1} dog\tikzmark{2} \textsc{df.cm}\textsubscript{1} cat   \\
+            \trans `I made a/the dog chase the cat.'
+            \boxit 
+		\ex \gll h<um>abol ang pusa ng aso.\\
+            \textsc{av}-chase \textsc{pivot} cat \tikzmark{1}\textsc{id.cm}\textsubscript{1} dog\tikzmark{2}	\\
+            \trans `The cat chased a/the dog.'
+            \boxit 
+    
+	\end{xlist}
+\end{exe}
+\vspace{-1.5mm}
+\begin{exe}
+ \ex {\textit{Puyuma}}
+     \begin{xlist}
+     \ex
+ 	\gll $\varnothing$\footnotemark-pa-sabsab=ku kana walak dra kurang.\\
+             \textsc{av-cau-}wash=\textsc{1sg.pivot} \textsc{df.cm}\textsubscript{1} child \tikzmark{1}\textsc{id.cm}\textsubscript{1} vegitable\tikzmark{2} \\
+             \trans `I made the child wash vegetables.'
+             \boxit
+         \ex
+ 		\gll S<em>absab na walak dra kurang.\\
+             \textsc{<av>}hit \textsc{df.pivot} child \tikzmark{1}\textsc{if.cm}\textsubscript{1} vegetable\tikzmark{2} \\
+             \trans `The child washed vegetables.'
+             \boxit
+    
+ 	\end{xlist}
+ \end{exe}
+ \addtocounter{footnote}{-1} %adjust this value to set the counter for footnote values to the right value
+\stepcounter{footnote}\footnotetext{In Puyuma, Amis, and Seediq, AV morphology is null in productive causatives due to a phonotactic constraint that disfavors the bilabial sequence: \textit{p<em>a-} (causative prefix \textit{pa-} + AV infix \textit{<em>}) (Blust pers. commun.). That the zero-marked causatives in (24)-(26) are AV-causatives is evidenced by their shared argument-marking pattern with the overtly-marked AV-causatives in Tagalog (23a), which bears an AV affix (\textit{nag-}) with no bilabial onset.} %this type of footnote (\footnotemark)to put inside figures requires \usepackage{tablefootnote}
+
+\vspace{-1.5mm}
+ \begin{exe}
+ \ex {\textit{Amis}}
+     \begin{xlist}
+     \ex
+ 	\gll $\varnothing$-pa-pi-lawup kaku ci-Sawmah-an ci-Panay-an inacila.\\
+             \textsc{av-cau-pi-}chase \textsc{1sg.pivot} \tikzmark{1}\textsc{pn-}Sawmah-\textsc{cm}\textsubscript{1}\tikzmark{2} \textsc{pn-}Panay-\textsc{cm}\textsubscript{1}\\
+             \trans `I asked Sawmah to chase Panay yesterday.'
+             \boxit
+         \ex
+ 		\gll Mi-lawup kaku ci-Sawmah-an inacila.\\
+\textsc{av-}chase \textsc{1sg.pivot} \tikzmark{1}\textsc{pn}-Sawmah-\textsc{cm}\textsubscript{1}\tikzmark{2} yesterday \\
+             \trans `I chased Sawmah yesterday.'
+             \boxit
+    
+ 	\end{xlist}
+ \end{exe}
+\vspace{-1.5mm}
+
+ \begin{exe}
+ \ex {\textit{Seediq}}
+     \begin{xlist}
+     \ex
+ 	\gll $\varnothing$-p-hanguc=ku $\varnothing$ Iwan $\varnothing$ roduc nii.\\
+             \textsc{av-cau-}cook=\textsc{1sg.pivot}  \tikzmark{1}\textsc{cm}\textsubscript{1} Iwan\tikzmark{2} $\varnothing$ chicken this \\
+             \trans `I asked Iwan to cook this chicken.'
+             \boxit
+         \ex
+ 		\gll q<m><n>ita=ku $\varnothing$ Iwan.\\
+             \textsc{<av><prf>}see=\textsc{1sg.pivot}  \tikzmark{1}\textsc{cm}\textsubscript{1} Iwan\tikzmark{2} \\
+             \trans `I saw Iwan.'
+             \boxit
+    
+ 	\end{xlist}
+ \end{exe}
+
+
+The shared CM\textsubscript{1}-marking between the causee in AV-causatives and AV objects in simple clauses reveals an ECM pattern (29), suggesting that CM\textsubscript{1} realizes structural accusative Case, rather than lexical oblique Case. Before making this conclusion, however, it is necessary to rule out an alternative account for the pattern in (29)---that CM\textsubscript{1} is the morphological realization of both lexical oblique Case and a type of inherent Case assigned to the causee in AV-causatives. If this alternative is viable, the ECM-like pattern may only be illusory.
+
+\vspace{-1mm}
+\begin{exe}
+\ex {\textit{The argument-marking pattern in types of AV constructions}}\vspace{-1.5mm}
+\begin{table}[h]
+\hspace{+1.2cm}\begin{tabular}{ll}
+     a. two-place AV-clauses     & b. AV-causatives\\ \midrule
+   external argument: \hspace{+2mm}Pivot & causer: \hspace{+2mm}Pivot\\
+   \textbf{internal argument: \hspace{+1mm}CM\textsubscript{1}} & \textbf{causee: \hspace{+1.5mm}CM\textsubscript{1}}\\
+   & causand: CM\textsubscript{1}\\
+              \midrule
+              
+\end{tabular}
+\end{table}
+\end{exe}
+
+\vspace{-3mm}
+
+Causative constructions across languages can be divided into three subtype, two of which contain a causee that is inherently Case-licensed. The first type of causative (henceforth Type I) employs a monoclausal structure, where the causee is introduced as an applicative phrase and Case-licensed by the applicative head (e.g. Ippolito 2000; Folli \& Harley 2007; Tubino Balanco 2010; Legate 2014), as in (30). If AV-causatives in Philippine-type languages exhibit a Type I structure, the CM\textsubscript{1}-marking borne by the causee is necessarily analyzed as realizing a type of inherent Case assigned by the applicative head. This marker may be homophonous with the Case assigned to AV objects (CM\textsubscript{1}), and thus has no value for examining the competing analyses.
+
+\begin{exe}
+ \ex{\textit{Type I causative}}\\
+ \scalebox{0.8}{ 
+  \jtree[xunit=2.8em, yunit=1.2em]
+ \! = {TP}
+     :{T}                                          {VoiceP}
+     :{{DP\textsubscript{\textsc{causer}}}}       {Voice'}
+     :{Voice}                                     {\textit{v}P}
+     :{\textit{v}\textsubscript{\textsc{caus}}}   {VoiceP}
+     :{VoiceP}!a                                  {PP}!b .
+     \psset{scaleby= .8}
+     \!a = :{Voice\textsubscript{\textsc{pass}}}  {\textit{v}P}
+          :{\textit{v}}                          {VP}
+          :{V}               {DP\textsubscript{\textsc{causand}}} .
+     \!b = :{{\rnode{A1}P}} {{\rnode{A2}DP\textsubscript{\textsc{causee}}}}. 
+    
+     \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-120,
+              angleB=-90,
+              ncurv=1]{->}{A1}{A2}
+            
+ \endjtree
+}
+ \end{exe}
+
+The second type of causative  possesses a bi-eventive structure, with the causee licensed as a \textit{by-}phrase attached to an embedded passive VoiceP (e.g. Kayne 1975; Legate 2014), as in (31). If AV-causatives in the four target languages possess a Type II structure, the shared CM\textsubscript{1}-marking between the causee and AV objects in simple clauses has no real value for examining the nature of CM\textsubscript{1} either, as the causee in this type of structure is also obligatorily analyzed as inherently Case-licensed. 
+
+ \begin{exe}
+ \ex{\textit{Type II causative}}\\
+ \begin{minipage}[t]{.4\textwidth}
+\begin{enumerate}
+
+ \scalebox{0.8}{ 
+ \jtree[xunit=2.8em, yunit=1em]
+ \! = {TP}
+     :{T}                                          {VoiceP}
+     :{{DP\textsubscript{\textsc{causer}}}}       {Voice'}
+     :{Voice}                                     {\textit{v}P}
+     :{\textit{v}\textsubscript{\textsc{caus}}}   {ApplP}
+     :{{\rnode{A2}DP\textsubscript{\textsc{causee}}}}         {Appl'}
+     :{{\rnode{A1}App}}                                     {\textit{v}P}
+     :{\textit{v}}                                {VP}
+     :{V}        {DP\textsubscript{\textsc{causand}}}.
+     
+    
+     \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-100,
+              angleB=-180,
+              ncurv=2]{->}{A1}{A2}
+              
+ \endjtree
+ }
+ 
+\end{enumerate}
+\end{minipage}% This must go next to `\end{minipage}`
+ \end{exe}
+
+The third type of causative also possesses a bi-eventive structure, with the caused event encoded as an independent active VoiceP (Harley 2008; Cole 1976; Owens 1985; Lee 1992; Maclachlan 1996; Travis 2000),  (32). In this type of causative, the causee is licensed in the embedded external argument position---a position that is accessible to structural accusative Case from the higher Voice and at the same time has no potential lexical Case licensor available. If AV-causatives in the four languages exhibit this type of structure, then, the CM\textsubscript{1}-marking on the causee can be straightforwardly analyzed as realizing structural accusative Case.
+
+
+ \begin{exe}
+ \ex{\textit{Type III causative}}\\
+ \scalebox{0.8}{ 
+ \jtree[xunit=2.8em, yunit=1em]
+ \! = {TP}
+     :{T}                                          {VoiceP}
+     :{{DP\textsubscript{\textsc{causer}}}}       {Voice'}
+     :{{\rnode{A1}Voice}}                                     {\textit{v}P}
+     :{\textit{v}\textsubscript{\textsc{caus}}}   {VoiceP}
+     :{{\rnode{A2}DP}\textsubscript{\textsc{causee}}}         {Voice'}
+     :{Voice}                                     {\textit{v}P}
+     :{\textit{v}}                                {VP}
+     :{V}        {DP\textsubscript{\textsc{causand}}}.
+    
+    
+    \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-150,
+              angleB=-150,
+              ncurv=2]{->}{A1}{A2}
+            
+              
+ \endjtree
+ }
+ \end{exe}
+
+\smallskip
+
+
+Four standard diagnostics reveal that AV-causatives in all four target languages possess a Type III structure, indicating that the shared CM\textsubscript{1}-marking between the causee and AV objects realizes structural accusative Case. The first argument for this analysis comes from the compatibility of the causee with agent-oriented adverbs. As the Type III causatives is the only one among the three that licenses the caused event in an independent active VoiceP, it is predicted to be the only type that allows an agent-oriented adverb modifying the caused event. This prediction is borne out by the data in (33a-d):
+
+
+\begin{exe}
+\ex{\textit{Compatibility of the caused event with agent-oriented adverbs}}
+\begin{xlist}
+\ex{\textit{Tagalog}}
+\gll Nag-pa-nakaw ako kay Ivan nang \textbf{palihim} ng keyk.\\
+ \tikzmark{1}\textsc{av.prf-cau}-steal \tikzmark{2}\textsc{1sg.pivot} \textsc{pn.cm}\textsubscript{1} Ivan \textsc{conj} \textbf{secretly} \textsc{id.cm}\textsubscript{1} cake\\
+\trans `I asked Ivan to steal the cake secretly.' (Ivan did so secretly)
+\boxit
+
+\ex{\textit{Puyuma}}
+\gll $\varnothing$-pa-pukpuk=ku kan Siber \textbf{pakireb} kana babuy.\\
+ \tikzmark{1}\textsc{av-cau}-hit\tikzmark{2}=\textsc{1sg.pivot} \textsc{sg.cm}\textsubscript{1} Siber  \textbf{severely} \textsc{df.cm}\textsubscript{1} boar\\
+\trans `I asked Siber to hit the boar severely.' (Siber did so severely)
+\boxit
+
+\ex{\textit{Amis}}
+\gll $\varnothing$-pa-pi-tenuwuy kaku ci-Panay-an tu riko'. \textbf{pina'un}.\\
+ \tikzmark{1}\textsc{av-cau}-weave\tikzmark{2} \textsc{1sg.pivot} \textsc{pn}-Panay-\textsc{cm}\textsubscript{1} \textsc{cm}\textsubscript{1}-that  clothes \textbf{carefully}\\
+\trans `I will ask Panay to weave the clothes carefully.' (Panay will do so carefully)
+\boxit
+
+\ex{\textit{Seediq}}
+\gll $\varnothing$-p-sais=ku $\varnothing$ Akin \textbf{murux} $\varnothing$ lukus.\\
+ \tikzmark{1}\textsc{av-cau}-sew\tikzmark{2}=\textsc{1sg.pivot} \textsc{cm}\textsubscript{1} Akin  \textbf{independently} \textsc{cm}\textsubscript{1} clothes\\
+\trans `I asked Akin to sew the clothes independently.' (Akin did so independently)
+\boxit
+\end{xlist}
+
+\end{exe}
+
+Second, in all four languages, the caused event in AV-causatives can be modified by the adverb of frequency `again', suggesting that it is licensed in an independent active VoiceP (34a-d)---which rules out both a Type I and Type II analysis.
+
+\begin{exe}
+\ex{\textit{Compatibility of the caused event with the adverb of frequency `again'}}
+\begin{xlist}
+\ex{\textit{Tagalog}}
+\gll Nag-pa-kanta ako kay Aya ng kanta \textbf{ulit}.\\
+ \tikzmark{1}\textsc{av.prf-cau}-sing\tikzmark{2} \textsc{1sg.pivot} \textsc{pn.cm}\textsubscript{1} Aya \textsc{id.cm}\textsubscript{1} song \textbf{again}\\
+\trans `I asked Aya to sing a/the song again.' (Aya did so again)
+\boxit
+
+\ex{\textit{Puyuma}}
+\gll $\varnothing$-pa-base=ku kan Senten \textbf{masal} kana kiping.\\
+ \tikzmark{1}\textsc{av-cau}-wash\tikzmark{2}=\textsc{1sg.pivot} \textsc{sg.cm}\textsubscript{1} Senten  \textbf{again} \textsc{df.cm}\textsubscript{1} clothes\\
+\trans `I asked Senten to wash the clothes again.' (Senten did so again)
+\boxit
+
+\ex{\textit{Amis}}
+\gll $\varnothing$-pa-pi-tangtang kaku ci-Afan-an \textbf{heca} t-una tali.\\
+ \tikzmark{1}\textsc{av-cau}-cook\tikzmark{2} \textsc{1sg.pivot} \textsc{pn}-Afan-\textsc{cm}\textsubscript{1} \textbf{again} \textsc{cm}\textsubscript{1}-that taro\\
+\trans `I will ask Afan to cook the taro again.' (Afan will do so again)
+\boxit
+
+\ex{\textit{Seediq}}
+\gll $\varnothing$-p-hanguc=ku $\varnothing$ Temi \textbf{dungan} $\varnothing$ roduc.\\
+ \tikzmark{1}\textsc{av-cau}-cook\tikzmark{2}=\textsc{1sg.pivot} \textsc{cm}\textsubscript{1} Temi  \textbf{again} \textsc{cm}\textsubscript{1} chicken\\
+\trans `I asked Temi to cook the chicken again.' (Temi did so again)
+\boxit
+\end{xlist}
+
+\end{exe} 
+
+Third, consistent with the observations above, the caused event in AV-causatives is compatible with temporal adverbs that bear a distinct aspect from the causing event, as seen in the examples below from Puyuma, Amis, and Seediq (33).
+
+\begin{exe}
+\ex{\textit{Compatibility of the caused event with a temporal adverb distinct rom the matrix aspect}}\footnote{In Tagalog, however, such examples are disfavored. I have no explanation for this asymmetry between Tagalog and the other three languages here. Nevertheless, the results from the three other diagnostics suggest that AV-causatives in Tagalog share the same structure with the other three languages. This is consistent with previous analyses of Tagalog (Maclachlan 1996; Travis 2000; Rackowski 2002), which all maintain a bi-eventive analysis for AV-causatives.}
+
+\begin{xlist}
+
+\ex{\textit{Puyuma}}
+\gll $\varnothing$-pa-da-deru=ku kan Akang dra patraka \textbf{andaman}.\\
+ \tikzmark{1}\textsc{av-red-cau}-cook\tikzmark{2}=\textsc{1sg.pivot} \textsc{sg.cm}\textsubscript{1} Akang  \textsc{id.cm}\textsubscript{1} meat \textbf{tomorrow}\\
+\trans `I already asked Akang to buy meat tomorrow.'
+\boxit
+
+\ex{\textit{Puyuma}}
+\gll $\varnothing$-pa-pi-'aca kaku ci-Kulas-an inacila t-u titi \textbf{anudafak}.\\
+ \tikzmark{1}\textsc{av-cau}-cook\tikzmark{2} \textsc{1sg.pivot} \textsc{pn}-Lisin-cm\textsubscript{1} cm\textsubscript{1}  pork \textbf{tomorrow}\\
+\trans `Yesterday I asked Kulas to buy pork tomorrow.' 
+\boxit
+
+
+\ex{\textit{Seediq}}
+\gll $\varnothing$-p-hanugc=ku $\varnothing$ Iwan \textbf{kusun} $\varnothing$ sari.\\
+ \tikzmark{1}\textsc{av-cau}-cook\tikzmark{2}=\textsc{1sg.pivot} \textsc{cm}\textsubscript{1} Iwan  \textbf{tomorrow} $\varnothing$ taro\\
+\trans `I asked Iwan to cook taro tomorrow.'
+\boxit
+\end{xlist}
+\end{exe}
+
+Finally, if AV-causatives indeed possess a Type III structure, the CM\textsubscript{1}-marked causee is predicted to c-command the causand. Quantifier-variable binding data from all four languages show that this prediction is borne out. As seen in (36a-d), across the four languages, a pronominal causand is free to be interpreted as a variable of a quantificational causee, showing a c-commanding relation compatible with a Type III structure.
+
+\begin{exe}
+\ex{\textit{Quantifier-variable binding between causee and causand in AV-causatives}}
+\begin{xlist}
+\ex{\textit{Tagalog}}
+\gll Nag-pa-basa ako \textbf{sa} \textbf{bawat} \textbf{estudyante} ng kanyang=libro.\\
+ \tikzmark{1}\textsc{av.prf-cau}-read \tikzmark{2}\textsc{1sg.pivot} \textsc{\textbf{df.cm}\textsubscript{1}} \textbf{every} \textbf{student} \textsc{id.cm}\textsubscript{1} \textsc{3pl.poss}=book\\
+\trans `I asked every student\textsubscript{<i>} to read his/her\textsubscript{<i/j>} book.'
+\boxit
+
+\ex{\textit{Puyuma}}
+\gll $\varnothing$-pa-deru=ku \textbf{kana} \textbf{taynaynayan} \textbf{driya} kantu=kuraw.\\
+ \tikzmark{1}\textsc{av-cau}-hit\tikzmark{2}=\textsc{1sg.pivot} \textsc{\textbf{sg.cm}\textsubscript{1}} \textbf{mother.\textsc{pl}}  \textbf{every} \textsc{3.poss.cm}\textsubscript{1}=fish\\
+\trans `I asked every mother\textsubscript{<i>} to cook her\textsubscript{<i/j>} fish.'
+\boxit
+
+\ex{\textit{Amis}}
+\gll $\varnothing$-pa-pi-tangtang kaku \textbf{tu} \textbf{cimacima} \textbf{a} \textbf{ina} tu titi nangra.\\ 
+\tikzmark{1}\textsc{av-cau}-cook\tikzmark{2} \textsc{1sg.pivot} \textbf{\textsc{cm}\textsubscript{1}} \textbf{every} \textbf{\textsc{lk}} \textbf{mother} \textsc{cm}\textsubscript{1} pork \textsc{3pl.poss}\\
+\trans `I will ask every mother\textsubscript{<i>} to cook her\textsubscript{<i/j>} pork.'
+\boxit
+
+\ex{\textit{Seediq}}
+\gll $\varnothing$-p-hanguct=ku $\varnothing$ \textbf{knkingal} \textbf{bubu} $\varnothing$ sari=daha.\\
+\tikzmark{1}\textsc{av-cau}-cook\tikzmark{2}=\textsc{1sg.pivot} \textbf{\textsc{cm}\textsubscript{1}} \textbf{every} \textbf{mother} \textsc{cm}\textsubscript{1} pork=\textsc{3pl.poss}\\
+\trans `I asked every mother\textsubscript{<i>} to cook her\textsubscript{<i/j>} taro.'
+\boxit
+\end{xlist}
+
+\end{exe}
+\vspace{-2mm}
+
+I conclude accordingly that AV-causatives across the four languages possess a Type III structure. This analysis suggests that the CM\textsubscript{1}-marked causee is licensed in the embedded external argument position, where only structural accusative Case, and not lexical oblique Case, is predicted to be available, indicating that CM\textsubscript{1} is necessarily analyzed as accusative Case. This analysis offers a straightforward account for the case-marking pattern in AV-causatives summarized in (29), in which CM\textsubscript{1}-marking on the causee and the causand comes from the matrix and the embedded Voice, respectively, as in (37):
+
+
+ \begin{exe}
+ \ex{\textit{The structure of AV-causatives in Tagalog, Puyuma, Amis, and Seediq}}
+ \newline
+ \scalebox{0.8}{ 
+ \jtree[xunit=2.8em, yunit=1em]
+ \! = {TP}
+     :{T}                                          {VoiceP}
+     :{{DP\textsubscript{\textsc{causer}}}}       {Voice'}
+     :{{\rnode{A1}Voice}}                                     {\textit{v}P}
+     :{\textit{v}\textsubscript{\textsc{caus}}}   {VoiceP}
+     :{{\rnode{A2}DP\textsubscript{\textsc{causee}}}}         {Voice'}
+     :{{\rnode{A3}Voice}}                                     {\textit{v}P}
+     :{\textit{v}}                                {VP}
+     :{V}        {{\rnode{A4}DP\textsubscript{\textsc{causand}}}}.
+    
+    
+     \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-120,
+              angleB=-160,
+              ncurv=1.3]{->}{A1}{A2}
+               \mput*{\textsc{cm\textsubscript{1}} (\textsc{acc})}
+      \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-120,
+              angleB=-160,
+              ncurv=1.2]{->}{A3}{A4}
+               \mput*{\textsc{cm}\textsubscript{1} (\textsc{acc})}         
+              
+ \endjtree
+ }
+ \end{exe}
+\bigskip
+
+
+Crucially, according to available descriptions, AV-causatives in all attested Philippine-type languages share the ECM pattern in (29). This, along with our current analysis that AV-marked causatives in the four target languages all share a Type III structure, strongly suggests a unitary Type III analysis may apply to AV-causatives in Philippine-type languages in general, indicating that the prototypical distribution of CM\textsubscript{1} shows the hallmarks of accusative Case.\bigskip\footnote{A Type III analysis has also been proposed for AV-causatives in Tsou (Chang 2015), a Philippine-type language that belongs to a different primary branch (Tsouic) from the four languages discussed here.}
+
+
+\subsection{Raising-to-object: the presence of the alleged \textsc{obl} case in nonthematic position}
+
+\noindent I now turn to the second  target construction, which reinforces the current observation that CM\textsubscript{1} may appear in particular structural positions where only  accusative Case and not oblique Case is predicted to be available. 
+
+Puyuma, Amis, and Seediq share a construction that can be descriptively termed \textit{raising-to-object} (RTO), characterized by the optional presence of an embedded phrase in the matrix object position without semantic consequences. In Romanian RTO, for instance, the subject of the embedded clause may freely appear in the matrix object position and triggers accusative-agreement with the matrix verb, as seen in (38).
+
+ \begin{exe}
+ \ex{\textit{Romanian}}
+
+\gll Am mirosit-\textbf{o} \textbf{pe} \textbf{Maria} [c\myfont{ă} voia s\myfont{ă} ne ntraga plasa].\\
+\textsc{aux.1} smell-\textsc{\textbf{cl.3sg.f.acc}}  {\textbf{\textsc{dom}}} \textbf{Maria} [\textsc{c} want.\textsc{pst} \textsc{subj} to.us draw net.the]  \\
+ \trans `I figured out that Maria intended to con us.' (Alboiu \& Hill 2013:2)
+
+\end{exe}
+
+
+ A construction similar to (38) is attested in at least 14 Philippine-type Austronesian languages, characterized by having a  knowledge/perception verb in the matrix clause with a finite CP complement. Consider the following examples from Puyuma, Amis, and Seediq.\footnote{Sources on RTO in specific languages are: Puyuma (Chen \& Fukuda 2016), Paiwan (Wu 2013), Amis (Chen \& Fukuda 2016), Atayal (Liu 2011), Seediq (Chen \& Fukuda 2016), Tsou (Liu 2011), Kavalan (Chang 2000), Saisiyat (Zeitoun 2000a), Bunun (Zeitoun 2000b), Rukai (Zeitoun 2000c), Tagalog (Law 2011), Cebuano (Davies 2005), and Malagasy (Pearson 2001).}
+
+
+ \begin{exe}
+ \ex{\textit{Puyuma}}
+     \begin{xlist}
+     
+      		\ex
+ 		\gll Ma-lradram=ku  [dra m-uka \textbf{i} \textbf{Atrung} i Balangaw adaman].\\
+\textsc{av}-know=\textsc{1sg.pivot}  [\textsc{c} \textsc{av-}go  {\textbf{\textsc{sg.pivot}}} \textbf{Atrung}\textsubscript{i}  \textsc{loc} Balangaw yesteday]  \\
+             \trans `I know that Atrung went to Balangaw yesterday.'
+ 		\ex
+ 		\gll Ma-lradram=ku \textbf{kan} {\textbf{Atrung}} [dra m-uka \textbf{\textit{(e.c.)}}\textsubscript{i} i Balangaw adaman].\\
+\textsc{av}-know=\textsc{1sg.pivot} \textbf{{\textsc{sg.cm}\textsubscript{1}}} \textbf{{Atrung}}\textsubscript{i}  [\textsc{c} \textsc{av-}go \textbf{\textit{(e.c.)}}\textsubscript{i} \textsc{loc} Balangaw yesteday]  \\
+             \trans `I know that Atrung went to Balangaw yesterday.'
+         
+\end{xlist}         
+\end{exe}
+
+
+\begin{exe}
+         
+\ex{\textit{Amis}}
+\begin{xlist}
+       		\ex
+ 	 		\gll Ma-fana' kaku [$\varnothing$ mi-sakilif \textbf{ci-Sawmah} ci-Kulas-an].\\
+\textsc{av}-know \textsc{1sg.pivot}  [\textsc{c} \textsc{av-}lie  \textbf{\textsc{sg.pivot}}-\textbf{Sawmah} \textsc{pn-}{Kulas}-\textsc{cm}\textsubscript{1}  \\
+       \trans `I know that Sawmah lied to Kulas.'
+ \ex
+ 		\gll Ma-fana' kaku \textbf{ci-Sawmah-an}\textsubscript{i} [$\varnothing$ mi-sakilif \textbf{\textit{(e.c.)}}\textsubscript{i} ci-Kulas-an].\\
+             \textsc{av}-know \textsc{1sg.pivot} \textbf{\textsc{pn}-\textbf{Sawmah}-\textsc{\textbf{cm}\textsubscript{1}}} [\textsc{c} \textsc{av-}lie \textbf{\textit{(e.c.)}}\textsubscript{i} \textsc{pn}-Kulas-\textsc{cm}\textsubscript{1}]  \\
+             \trans `I know that Sawmah lied to Kulas.'
+            \end{xlist}
+            \end{exe}
+        
+            
+\begin{exe}
+          \ex{\textit{Seediq (Truku)}}
+          \begin{xlist}
+       		\ex
+ 		\gll Me-'isug=ku [$\varnothing$ s<m>ipaq $\varnothing$ huling=mu  \textbf{ka} \textbf{Imi}].\\
+\textsc{av}-know=\textsc{1sg.pivot}  [\textsc{c} \textsc{<av>}hit \textsc{cm}\textsubscript{1} dog=\textsc{1sg.poss} {\textbf{\textsc{pivot}}} \textbf{Imi}] \\
+            \trans `I fear that Imi will hit my dog.'
+ 
+         \ex
+ 		\gll Me-'isug=ku \textbf{\textit{$\varnothing$}} \textbf{Imi}\textsubscript{i} [$\varnothing$ s<m>ipaq $\varnothing$ huling=mu \textbf{\textit{(e.c.)}\textsubscript{i}}].\\
+             \textsc{av}-fear=\textsc{1sg.pivot} \textbf{\textsc{cm}\textsubscript{1}} \textbf{Imi}\textsubscript{i} [\textsc{c} \textsc{<av>}hit \textsc{cm}\textsubscript{1} dog=\textsc{1sg.poss} \textbf{\textit{(e.c.)}\textsubscript{i}}]  \\
+             \trans `I fear that Imi will hit my dog.'
+ 	\end{xlist}
+ \end{exe}
+
+Across the three languages, the raised phrase in an RTO construction is Case-licensed by the matrix clause. As (39)-(41) show, when the matrix verb in an RTO sentence bears AV-morphology (henceforth AV-RTO), the raised phrase must bear CM\textsubscript{1}-marking, regardless of its Case status in the embedded clause ((38a), (39a), (40a)). When the matrix voice changes to PV, the raised phrase must bear Pivot-marking (40a-c), revealing that it is Case-marked like a direct object in simple clauses.  
+
+ \begin{exe}
+ \ex{\textit{Pivot-marked raised phrase in RTO constructions with a PV-marked matrix verb} }
+     \begin{xlist}
+   \ex{\textit{Puyuma}}\footnote{In Puyuma, a number of LV-marked verbs function as PV-verbs and select an internal argument, rather than a locative phrase, as the Pivot of the sentence. For the sake of clarity, I gloss this type of verb as \textsc{lv[pv]}.}
+ 		\gll Ku=abalru-ay \textbf{i} \textbf{Siber} [dra d<em>a-deru \textbf{\textit{(e.c.)}}\textsubscript{i} dra ayam].\\ 
+\textsc{1sg.cm}\textsubscript{2}-forget-\textsc{lv[pv]}  {\textbf{\textsc{sg.pivot}}} \textbf{Siber} [\textsc{c} \textsc{<av>prog}-cook \textbf{\textit{(e.c.)}}\textsubscript{i}  \textsc{id.cm}\textsubscript{1} chicken]  \\
+             \trans `I forgot that Siber was cooking chicken.'
+ \ex{\textit{Amis}}
+ 		\gll Ma-lemed ni Ofad \textbf{ci} \textbf{Afan} [$\varnothing$ mi-tangtang \textbf{\textit{(e.c.)}}\textsubscript{i} t-una tali].\\
+             \textsc{av}-dream \textsc{cm}\textsubscript{2} Ofad {\textbf{\textsc{pn.pivot}}} \textbf{Afan} [\textsc{c} \textsc{av-}cook \textbf{\textit{(e.c.)}}\textsubscript{i} \textsc{cm}\textsubscript{1}-that taro]  \\
+             \trans `Ofad dreamt that Afan cooked taro.'             
+     \ex{\textit{Truku Seediq}}
+ 		\gll Kela-un=mu \textbf{ka} \textbf{Ikung} [$\varnothing$ m-usa $\varnothing$ Skangki \textbf{\textit{(e.c.)}\textsubscript{i}}].\\
+           know-\textsc{pv}=\textsc{1sg.cm}\textsubscript{2} \textbf{\textsc{pivot}} \textbf{Ikung} [\textsc{c} \textsc{av-}go \textsc{loc} Skangki \textbf{\textit{(e.c.)}\textsubscript{i}}]  \\
+             \trans `I know that Ikung went to Skangki.'         
+             \end{xlist}
+             \end{exe}
+
+The presence of CM\textsubscript{1} on the raised phrase in RTO has profound implications for the analysis of this case marker, as none of the existing analyses of RTO are compatible with an oblique-Case licensed raised phrase. The first type of RTO construction contains a raised phrase that undergoes actual movement from the embedded clause to its spell-out position (e.g., Japanese: Kuno 1976; Tanaka 2002; Korean: Yoon 2007; Romanian: Alboiu \& Hill 2013; Zulu: Halpert \& Zeller 2015), as in (43a). The raised phrase in this type of construction is standardly analyzed as structurally Case-licensed by the appropriate matrix Case-licensor, as seen with the Romanian example (38). The second type of RTO construction possesses an apparent `raised phrase' base-generated in its spell-out position, as in (43b) (eg. Zacapoaxtla Nahuat: Higgins 1981; Madurese: Davies 2005; Sundanese: Kurniawan 2012; Cebuano: Davies 2005). In this type of construction, the raised phrase is standardly analyzed as nonthematic, which is semantically identified with an embedded pronoun through coindexation.
+
+
+\begin{exe}
+\ex{\textit{Two types of RTO constructions}} 
+\begin{xlist}
+\ex{\textit{Type I: the raised phrase (XP) underwent movement from the embedded clause}}\vspace{+0.5mm}\\
+Voice . . . V\textsubscript{knowledge/perception} . . . \textbf{XP}\textsubscript{i} [\textsc{\textsubscript{cp/ip}} (\textsc{c}) . . . V . . . \textbf{<t\textsubscript{i}>}]\vspace{-1mm}\\
+\ex{\textit{Type II: the raised phrase (XP) being base-generated at the ``raised'' position}}\vspace{+.5mm}\\
+Voice . . . V\textsubscript{knowledge/perception} . . . \textbf{XP}\textsubscript{i} [\textsc{\textsubscript{cp/ip}} (\textsc{c}) . . . V . . . \textbf{pronoun{\textsubscript{i}}}]\\
+\end{xlist}
+\end{exe}
+
+
+ As oblique Case is licensed along with $\theta$-licensing, the fact that neither of the two types of RTO allows a raised phrase $\theta$-licensed by the matrix verb suggests that CM\textsubscript{1}-marking does not realize oblique Case. In Type I constructions (42a), the raised phrase is base-generated in the embedded clause, and is therefore necessarily analyzed as $\theta$-licensed by the embedded verb. In Type II constructions, the raised phrase is standardly analyzed as lacking thematic identity with the matrix verb (see, e.g., Higgins 1981; Potsdam \& Runner 2001; Davies 2005 for details), as assuming it to be lexically Case-licensed by the matrix verb will yield an infelicitous $\theta$-grid (42), which requires an independently motivated lexical entry that licenses three $\theta$-roles, with the alleged thematic role on the raised phrase difficult to classify. 
+
+
+\begin{exe}
+\ex V\textsubscript{knowledge/perception} <x\textsubscript{Agent}, y\textsubscript{Theme}, z\textsubscript{\textsc{xp}}>
+\end{exe}
+
+As none of the existing analyses of RTO are compatible with an oblique Case-licensed raised phrase, the presence of CM\textsubscript{1} in RTO constructions argues against the oblique Case analysis for CM\textsubscript{1}.
+
+
+\subsection{The absence of the alleged \textsc{obl} case in restructuring infinitives}
+
+\noindent In the discussion so far, we have seen that CM\textsubscript{1} may appear in two structural positions where only accusative case and not oblique Case is predicted to be available. I now turn to the third target construction, which shows that CM\textsubscript{1} is absent in a specific syntactic environment where only accusative Case and not oblique Case is predicted to be unavailable.
+
+Puyuma, Amis, and Seediq all exhibit a type of nonfinite complement that shows the hallmarks of a restructuring infinitive (henceforth RI) (Rizzi 1978, 1982; Aissen \& Perlmutter 1976, 1983; Wurmbrand 2001 \textit{et seq}.; Cinque 2004).\footnote{Besides Puyuma, Amis, and Seediq, restructuring constructions are attested in at least six other Philippine-type Formosan languages (Kavalan, Atayal, Paiwan, Takibakah Bunun, Saaroa, Pazeh), as well as two other Philippine-type languages, Chamorro and Kimaragang Dusun.} Similar to restructuring constructions in Romance, the type of infinitive attested in Formosan is associated with aspectual verbs and \textit{try}-type verbs, and shows a number of characteristics indicating its structural deficiency, including obligatory clitic climbing, inability to host aspect markers, and the lack of an embedded complementizer, as well as a special voice-marking constraint known as `AV-only', which restricts the verb morphology inside the RI to Actor Voice (43a-c).\footnote{As seen in (44a), when the internal argument of the RI is a pronominal clitic, it obligatorily `climbs' to the matrix predicate, as if it is an object of the matrix verb. At the same time, the infinitive cannot host a complementizer, which is obligatorily present in finite CP complements.}
+
+
+ \begin{exe}
+ \ex{\textit{The AV-only constraint in Puyuma/Amis/Seediq infinitives}}
+     \begin{xlist}
+   \ex{\textit{Puyuma}}\footnote{Puyuma exhibits a number of LV-form verbs that function as PV-verbs and select an internal argument as the Pivot of the sentence. For the sake of clarity, I gloss this type of verb as \textsc{lv[pv]}.}
+ 		\gll Tu=talam-ay=\textbf{yu} [\textsubscript{\textsc{inf}} (*dra) \textbf{s<em>abana'/*-aw/*-ay/*-anay} \textbf{(e.c.)\textsubscript{i}}].\\
+\textsc{3.cm}\textsubscript{2}=try-\textsc{lv[pv]}=\textsc{\textbf{2sg.pivot}\textsubscript{i}} [\textsubscript{\textsc{inf}} \textsc{(*c)}  \tikzmark{1}\textbf{\textsc{<av>}cheat/*\textsc{pv}/*\textsc{lv}/*\textsc{cv}}\tikzmark{2} \textbf{(e.c.)\textsubscript{i}}]. \\
+             \trans `He/she tried to cheat you.'
+             \boxit
+             
+ \ex{\textit{Amis}}
+ 		\gll Tanam-en aku [\textsubscript{\textsc{inf}} \textbf{mi-tangtang/*-en/*-an/*sapi-} k-una titi].\\
+             try-\textsc{pv} \textsc{1sg.cm}\textsubscript{2} [\textsubscript{\textsc{inf}} \tikzmark{1}\textbf{\textsc{av-}cook/*\textsc{pv}/*\textsc{lv}/*\textsc{cv}}\tikzmark{2} \textsc{pivot}-that pork] \\
+             \trans `I will try to cook that pork.'         \boxit    
+     \ex{\textit{Seediq}}
+ 		\gll Ququ-un=mu [\textbf{m-imah/*<n>/*-an/*s-} ka sino nii].\\ try-\textsc{pv}=\textsc{1sg.cm\textsubscript{2}} [\tikzmark{1}\textbf{\textsc{av-}drink-\textsc{*pv/*lv/*cv}}\tikzmark{2} \textsc{pivot} alcohol this]  \\
+             \trans `I will try to drink this alcohol.'        \boxit 
+             \end{xlist}
+             \end{exe}
+
+In all three languages, this type of infinitive manifests a long-distance Case-licensing phenomenon reminiscent of German long passives (Wurmbrand 2001 et seq.). When the matrix voice is in PV, the internal argument inside the RI bears obligatory Pivot-marking (45a-c), which is unexpected given the AV morphology on the embedded verb. Importantly, the Pivot-marked `AV object' is accessible to A'-extraction (46a-c), suggesting that it indeed behaves like a Pivot phrase. 
+
+\begin{exe}
+ \ex{\textit{Internal argument extraction from AV-marked RIs}}
+     \begin{xlist}
+   \ex{\textit{Puyuma}}
+ 		\gll A manay\textsubscript{i} [\textsubscript{\textsc{inf}} nu=t<in>alam s<em>alrem \textbf{(e.c.)\textsubscript{i}}]?\\
+\textsc{neu.art} stuff\textsubscript{i} [\textsubscript{\textsc{inf}} \textsc{2sg.cm}\textsubscript{2}=try<\textsc{pv.prf.nmz} \tikzmark{1}\textsc{<av>}grow>\tikzmark{2} \textbf{(e.c.)\textsubscript{i}}]\\
+             \trans `What did you try to grow?'
+             \boxit
+             
+ \ex{\textit{Amis}}
+ 		\gll U maan\textsubscript{i} ku [\textsubscript{\textsc{inf}} mi-tanam-an isu mi-tangtang \textbf{(e.c.)\textsubscript{i}}]?\\
+\textsc{neu.det} stuff\textsubscript{i} \textsc{lk} [\textsubscript{\textsc{inf}} try-\textsc{lv[pv]} \textsc{2sg.cm}\textsubscript{2}  \tikzmark{1}\textsc{av-}cook>\tikzmark{2} \textbf{(e.c.)\textsubscript{i}}]\\
+             \trans `What did you try to cook?'
+             \boxit
+     \ex{\textit{Seediq}}
+ 		\gll Maanu\textsubscript{i} ka [\textsubscript{\textsc{inf}} ququ-un=mu \textsc{av-}drink \textbf{(e.c.)\textsubscript{i}}]?\\
+what\textsubscript{i} \textsc{lk} [\textsubscript{\textsc{inf}} try-\textsc{pv=2sg.cm}\textsubscript{2} \tikzmark{1}\textsc{av-}drink>\tikzmark{2} \textbf{(e.c.)\textsubscript{i}}]\\
+             \trans `What will you try to drink?'
+             \boxit
+             \end{xlist}
+             \end{exe}
+             
+             
+   When the matrix verb changes to  AV, the embedded internal argument obligatorily bears CM\textsubscript{1}-marking (46), suggesting that this object is Case-licensed by the appropriate matrix Case-licensor.
+
+\begin{exe}
+ \ex{\textit{Matrix-dependent case-marking on the RI objects}}
+
+     \begin{xlist}
+   \ex{\textit{Puyuma}}
+ 		\gll T<em>alam=\textbf{ku} [\textsubscript{\textsc{inf}} s<em>abana'/*-aw/*-ay/*-anay kanu \textbf{(e.c.)\textsubscript{i}}].\\
+\textsc{3.cm}\textsubscript{2}=try\textsc{<av>}=\textsc{\textbf{1sg.pivot}} [\textsubscript{\textsc{inf}}  \tikzmark{1}\textsc{<av>}cheat/*\textsc{pv}/*\textsc{lv}/*\textsc{cv}\tikzmark{2} \textsc{2sg.acc} \textbf{(e.c.)\textsubscript{i}}]. \\
+             \trans `He/she tried to cheat you.'
+             \boxit
+             
+ \ex{\textit{Amis}}
+ 		\gll Mi-tanam kaku [\textsubscript{\textsc{inf}} mi-tangtang/*-en/*-an/*sapi- t-una titi].\\
+             \textsc{av}-try \textsc{1sg.pivot} [\textsubscript{\textsc{inf}} \tikzmark{1}\textsc{av-}cook/*\textsc{pv}/*\textsc{lv}/*\textsc{cv}\tikzmark{2} \textsc{pivot}-that pork] \\
+             \trans `I will try to cook that pork.'         \boxit    
+     \ex{\textit{Seediq}}
+ 		\gll Ququ=ku [\textsubscript{\textsc{inf}} m-imah/*<n>/*-an/*s- $\varnothing$ sino nii].\\ try.\textsc{av}=\textsc{1sg.cm\textsubscript{2}} [\textsubscript{\textsc{inf}} \tikzmark{1}\textsc{av-}drink-\textsc{*pv/*lv/*cv}\tikzmark{2} alclhol this]  \\
+             \trans `I will try to drink the alcohol.'         \boxit
+             \end{xlist}
+             \end{exe}
+
+The presence of this long-distance Case-licensing phenomenon suggests that the AV-marked infinitives in (45)-(47) are incapable of Case-licensing their internal argument. Therefore, the apparent `AV objects' inside the RI are Case-licensed by the matrix clause, resulting in matrix-voice dependent case alternation on the embedded internal argument. 
+
+This phenomenon sheds new light on the nature of CM\textsubscript{1}. Given the presence of a lexical verb inside an RI, the internal argument inside an AV-marked RI (e.g. (45a-c)) is predicted to bear CM\textsubscript{1}-marking if the source of this Case is indeed the lexical verb. The fact that the internal argument inside the RI is obligatorily Case-marked by the matrix clause (48a-c) thus indicates that V is not the source of CM\textsubscript{1}.
+
+ \begin{exe}
+ \ex{\textit{The absence of CM\textsubscript{1} in AV-marked RIs with a PV-marked matrix verb}}
+     \begin{xlist}
+     \ex{\textit{Puyuma}}
+ 		\gll Ku=talam-ay [\textsubscript{\textsc{inf}} (*dra) s<em>abana' i/*kan Apeng].\\
+\textsc{1.cm}\textsubscript{2}=try-\textsc{lv[pv]} [\textsubscript{\textsc{inf}} \textsc{(*c)}  \tikzmark{1}\textsc{<av>}cheat\tikzmark{2} \textsc{sg.pivot/*sg.cm}\textsc{1} Apeng]. \\
+             \trans `I tried to cheat Apeng.'
+             \boxit
+             
+ \ex{\textit{Amis}}
+ 		\gll Tanam-en aku [\textsubscript{\textsc{inf}} mi-tangtang k-una/*t-una titi].\\
+             try-\textsc{pv} \textsc{1sg.cm}\textsubscript{2} [\textsubscript{\textsc{inf}} \tikzmark{1}\textsc{av-}cook\tikzmark{2} \textsc{pivot}-that/*\textsc{cm}\textsubscript{1}-that pork] \\
+             \trans `I will try to cook that pork.'         \boxit    
+     \ex{\textit{Seediq}}
+ 		\gll Ququ-un=mu [m-imah ka/*$\varnothing$ sino nii].\\ try-\textsc{pv}=\textsc{1sg.cm\textsubscript{2}} [\tikzmark{1}\textsc{av-}drink\tikzmark{2} \textsc{pivot/*cm}\textsubscript{1} alcohol this]  \\
+             \trans `I will try to drink this alcohol.' 
+             \boxit
+             \end{xlist}
+             \end{exe}
+
+At the same time, the unavailability of CM\textsubscript{1} inside RIs follows straightforwardly from an accusative Case analysis for CM\textsubscript{1}, which  predicts the absence of this case marker in constructions that bear a defective Voice incapable of Case-licensing (Wurmbrand 2001, 2014). The absence of CM\textsubscript{1} inside the RIs thus reinforces the accusative analysis for this case-marker, and  undermines a lexical Case analysis of CM\textsubscript{1}. 
+
+
+
+\section{Formosan detransitives and their implications for the nature of Philippine-type actor voice}
+
+
+\noindent We have seen in section 3 that the distribution of the case borne by AV objects shows the hallmarks of accusative Case, revealing that two-place AV constructions are true transitives. This analysis makes a testable prediction. Since Burzio (1986), the availability of structural accusative Case in a clause is standardly assumed to be correlated with the presence or absence of an external argument (see, e.g., Kratzer 1996; Pylkkänen 2002; Harley 1995, 2013; Merchant 2008; Legate 2014). If CM\textsubscript{1} indeed marks accusative Case, then, this case marker is predicted to be absent in constructions with no external argument. In this section, I show that this prediction is indeed borne out via an investigation of an underexplored detransitivizing construction found in Formosan languages.
+
+\subsection{The \textit{mu-}construction in Formosan and its main traits}
+
+\noindent Three Philippine-type Formosan languages, Puyuma, Thao, and Bunun, all exhibit an underexplored valency-decreasing operation marked by the sequence \textit{mu-}. When this sequence is present, the external argument of a two-place verb is obligatorily absent, and the internal argument bears Pivot-marking (49)-(51), as does the sole argument in monovalent intransitives.
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll D<em>isdis na walak kantu=katrakatr. \hspace{45mm}{[2-place]}\\
+             \tikzmark{1}<\textsc{av}>\tikzmark{2}\hspace{+.6mm}tear \textsc{df.pivot} child \textsc{3.poss.acc}=pants  \\
+            \trans `The child tore his/her panst.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Mu-disdis na katrakatr. \hspace{70mm}{[1-place]}\\
+             \tikzmark{1}\textsc{mu}\tikzmark{2}-tear \textsc{df.pivot} pants \\
+            \trans `The pants were torn.'
+            \boxit
+	\end{xlist}
+\end{exe}
+\vspace{-6mm}
+\begin{exe}
+\ex {\textit{Thao}}
+    \begin{xlist}
+		\ex
+		\gll Yaku t<m>uqris takic. \hspace{27mm}{[2-place]}\\
+             \textsc{1sg.(pivot)} \tikzmark{1}\textsc{<av>}\tikzmark{2}catch.with.a.snare.trap  barking.deer.\textsc{acc}  \\
+            \trans `I caught a barking deer with a snare trap.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Mu-tuqris iza na lhizashan. \hspace{37mm}{[1-place]}\\
+             \tikzmark{1}\textsc{mu}\tikzmark{2}-catch.with.a.snare.trap this \textsc{lk} pheasant(.\textsc{pivot}) \\
+            \trans `The pheasant is caught with a snare trap.' (Blust 2003:1020)
+            \boxit
+	\end{xlist}
+\end{exe}
+\vspace{-6mm}
+
+\begin{exe}
+\ex {\textit{Bunun}}
+    \begin{xlist}
+		\ex 
+		\gll Ma-buhas tama sibus. \hspace{48mm}{[2-place]}\\
+             \tikzmark{1}\textsc{av}\tikzmark{2}-snap.off father.textsc{pivot} sugarcane.\textsc{acc}  \\
+            \trans `Father snapped off a/the sugarcane.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Mu-buhas a sihi. \hspace{77mm}{[1-place]}\\
+             \tikzmark{1}\textsc{mu}\tikzmark{2}-snap.off \textsc{pivot} branch  \\
+            \trans `The tree branch (was) snapped off.' (ODFL)
+            \boxit
+	\end{xlist}
+\end{exe}
+
+Primary data from Puyuma suggests that this \textit{mu-}marked construction  (henceforth \textit{mu-}construction) is best analyzed as a detransitive. Under the standard assumptions, passives differ from detransitives and anticausatives in allowing a \textit{by-}phrase that encodes a DP that bears the external theta role (Marantz 1984; Levin \& Rappaport Hovav 1995; Reinhart 2000; Alexiadou et al. 2006). Detransitives and anticausatives, on the other hand, occasionally allow an adjunct that introduces the cause of the event, which is incompatible with passives (Roeper 1987; Levin \& Rappaport Hovav 1995; Alexiadou et al. 2006). This is exemplified with the examples below from English (52) and German (53):
+
+
+ \begin{exe}
+\ex {\textit{English}}
+    \begin{xlist}
+		\ex The door was opened (by Mary). \hspace{51mm}{[passive]} \vspace{-1mm}
+		\ex The door opened (*by Mary/from the wind). \hspace{32mm}{[detransitive]}
+	\end{xlist}
+\end{exe}
+\vspace{-4mm} 
+\begin{exe}
+\ex {\textit{German}}
+    \begin{xlist}
+		\ex
+		\gll Der T\myfont{ür} wurde (von Peter) \myfont{ö}ffnete. \hspace{5mm}{[passive]}\\
+            the door was (by Peter) opened  \\
+            \trans `The door was opened (by Peter).'
+            % \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Die T\myfont{ür} \myfont{ö}ffnete sich (durch einen Windsto\myfont{ß}/*von Peter). \hspace{10mm}{[detransitive]}\\
+           the door openenned \textsc{refl} (through a blast.of.wind) \\
+            \trans `The door opened (through a blast of wind/*by Peter). (Alexiadou et al. 2006:184-5)
+         
+	\end{xlist}
+\end{exe}
+
+\noindent Another asymmetry that distinguishes passives from detransitives and anticausatives lies in the former's compatibility with an agent-oriented adverb (Alexiadou et al. 2006), as in (54):
+
+  \begin{exe}
+    \ex {\textit{English}}
+    \begin{xlist}
+    \ex \begin{minipage}[t]{.6\textwidth}
+		 The boat was sunk (\textsuperscript{\Checkmark}\hspace{-1mm}deliberately). 
+		\end{minipage}%
+	\begin{minipage}[t]{.2\textwidth}
+        \hfill {[passive]}
+	\end{minipage}%
+	
+    \ex \begin{minipage}[t]{.6\textwidth}
+		 The boat sank (*deliberately).
+		\end{minipage}%
+	\begin{minipage}[t]{.2\textwidth}
+        \hfill {[detransitive]}
+	\end{minipage}%
+	\end{xlist} 
+\end{exe}
+ 
+A detransitive analysis of the \textit{mu}-construction thus follows from its incompatibility
+with \textit{by}-phrase adjuncts (55) and agent-oriented adverbs (56), as well as its compatibility with adjuncts that embed a cause, as seen in (55).
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll M-u-deru na patraka (\textsuperscript{\Checkmark}\hspace{-1mm}dra kadaw/*kana walak/*kan Isaw). \\
+            \tikzmark{1}\textsc{mu-}cook\tikzmark{2} \textsc{df.pivot}  meat (\textsc{id.acc} sun/\textsc{*df.acc} child/\textsc{*sg.acc} Isaw)  \\
+            \trans `The meat (was) cooked (from sunshine/*by the child/*by Isaw).'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll M-u-truwal na aleban (\textsuperscript{\Checkmark}\hspace{-1mm}dra balri/*kana sinsi/*draw traw). \\
+            \tikzmark{1}\textsc{mu-}open\tikzmark{2} \textsc{df.pivot}  door (\textsc{id.acc} wine/\textsc{*id.acc} teacher\textsc{/*df.acc} teacher)  \\
+            \trans `The door opened (from the wind/*by the teacher/*by someone).'
+            \boxit 
+       \ex
+		\gll M-u-sabsab na palridring (\textsuperscript{\Checkmark}\hspace{-1mm}dra udal/*kana bangsaran/*kan Senten). \\
+            \tikzmark{1}\textsc{mu-}wash\tikzmark{2} \textsc{df.pivot}  car (\textsc{id.acc} rain/\textsc{*df.acc} young.man/\textsc{*sg.acc} Senten)  \\
+            \trans `The car (was) washed (from the rain/*by the young man/*by Senten).'
+            \boxit 
+         
+	\end{xlist}
+\end{exe}
+
+  \begin{exe}
+    \ex {\textit{Puyuma}}\\
+   \begin{xlist}
+           
+        \ex \gll (\textsuperscript{\Checkmark}\hspace{-1mm}Tremakatrakaw) m-ekan na walak kana kuraw. \hspace{+1.1cm}{[AV construction]}\\ 
+            (secretly) \tikzmark{1}\textsc{av-}eat\tikzmark{2} \textsc{df.pivot}  child \textsc{df.cm}\textsubscript{1} fish  \\
+            \trans `The child ate the fish (secretly).' \boxit
+       \ex \gll (*Tremakatrakaw) m-u-ekan na kuraw.\hspace{+3cm}{[\textit{mu-}construction]}\\ 
+            (secretly) \tikzmark{1}\textsc{av-u-}eat\tikzmark{2} \textsc{df.pivot}  fish  \\
+            \trans `The fish was eaten (secretly).' \boxit
+               
+	
+ 	\end{xlist}
+\end{exe}
+
+%  \begin{exe}
+% \ex {\textit{Puyuma}}
+%     \begin{xlist}
+% 		\ex
+% 		\gll (\textsuperscript{\Checkmark}\hspace{-1mm}Tremakaw) m-ekan na ngiyaw kana kuraw. \hspace{16mm}{[AV-construction]}\\
+%             (secretly) \tikzmark{1}\textsc{av-}eat\tikzmark{2} \textsc{df.pivot} cat \textsc{df.acc} fish  \\
+%             \trans `The cat ate the fish (secretly).'
+%             \boxit %make the first box for the first two numbers
+%           % if there are more boxes in one example, specify what the first mark is
+%           % like \boxit*{put number here}
+% 			\ex
+% 		\gll (*tramakaw) mu-ekan na kuraw. \hspace{37mm}{[\textit{mu}-construction]}\\
+%             (secretly) \tikzmark{1}\textsc{mu}-eat\tikzmark{2} \textsc{df.pivot} fish \\
+%             \trans `The fish was eaten (*secretly).'
+%             \boxit
+         
+% 	\end{xlist}
+% \end{exe}
+
+This analysis is reinforced by the behavioral distinctions between the \textit{mu-}construction and \textit{ki-}marked passives in Puyuma, which are compatible with both agent-oriented adverbs and \textit{by-}phrases, as seen in (57).
+
+
+\begin{exe}
+\ex {\textit{Passives in Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll Ki-treki na walak (\textsuperscript{\Checkmark}\hspace{-1mm}kan Pilay/kana maitrang). \\
+           \textsc{pass}-scold \textsc{df.pivot} child (\textsc{sg.obl} Pilay/\textsc{df.obl} old.person) \\
+            \trans `The child was scolded (by Pilay/by the old person).'
+             
+	\ex
+		\gll (\textsuperscript{\Checkmark}\hspace{-1mm}Pakireb/tremakatrakaw) ki-pukpuk na suwan (\textsuperscript{\Checkmark}\hspace{-1mm}kan Sawagu). \\
+            (severely/secretly) \textsc{pass}-hit \textsc{sg.pivot} Sawagu (\textsc{sg.obl} Sawagu)  \\
+            \trans `The dog was hit (by Sawagu) (severely/secretly).'
+            
+            \end{xlist}
+            \end{exe}
+
+
+
+Having ruled out a passive analysis for the \textit{mu-}construciton, I further assume that anticausativization differs from detransitivization in its compatibility only with two-place verbs that fall under the causative/inchoative subclass (Haspelmath 1993; Alexiadou et al. 2006). Under this criterion, the \textit{mu-}construction in all three languages (Puyuma, Thao, Bunun) shows the hallmarks of a detransitive, given its compatibility with both causative-inchoative verbs and agent-oriented verbs, as seen with the sample compatible verbs below.\footnote{Despite of the lack of first-hand diagnostics in Bunun and Thao, none of \textit{mu}-marked sentences reported in the literature contain a \textit{by}-phrase or an agent-oriented adverb. Given the construction's consistent compatibility with agent-oriented verbs, there is no particular reason to assume that the construction in the two languages differs from that in Puyuma in structure or behavior.} 
+
+\begin{exe}
+\ex {\textit{Verbs compatible with a \textit{mu}-construction in Puyuma, Thao, and Bunun}}
+\begin{table}[h]
+\begin{tabular}[t]{lll}
+          & Agentive verbs                                                                                                                                                            & Causative/inchoative verbs\\\midrule
+a. Puyuma & \begin{tabular}[t]{@{}l@{}}\textit{bury, carve, catch, cheat, cleave,} \\ \textit{comb, cook, cut, drink, eat, lock,} \\ \textit{pack, push, sell, open, squeeze,} \\ \textit{wash, weed, tear, tie}\end{tabular} & \begin{tabular}[t]{@{}l@{}}\textit{break, break down, burst open, burn,} \\ \textit{close, collapse, crack, extinguish, knot,} \\ \textit{loosen, sink, snap off}\end{tabular} \\
+b. Thao   & \begin{tabular}[t]{@{}l@{}}\textit{catch, catch in a trap, gash,} \\ \textit{gather, peel, scratch, untie,} \\ \textit{surround, demolish}\end{tabular}                                                        & \begin{tabular}[t]{@{}l@{}}\textit{break, break into pieces, break down, extinguish,} \\ \textit{fall into pieces, fall off, loosen,} \\\textit{split wide open}\end{tabular}   \\
+c. Bunun  & \begin{tabular}[t]{@{}l@{}}\textit{snap off, flip, spin, collect, mix,} \\ \textit{gather, mash, pull up, untie,} \\ \textit{scatter}\end{tabular}                                                   & \begin{tabular}[t]{@{}l@{}}\textit{spray, loosen, demolish, fall off,} \\ \textit{break}, break into pieces\end{tabular}\\\midrule                                                        
+\end{tabular}
+\end{table}
+\end{exe}
+
+
+
+I conclude accordingly that the \textit{mu-}construction is best analyzed as a detransitive.
+
+
+\subsection{The detransitivizing sequence \textit{mu} = AV affix \textit{m-} + detransitivizer \textit{u-}}
+
+\noindent A subsequent question arising from the current analysis is the relationship between the detransitivizing sequence \textit{mu-}\hspace{.5mm}, which introduces a one-place construction (e.g. (59a)), and the AV affix, which, when present alone, denotes a two-place construction (e.g. (59b)).
+
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll D<em>isdis na walak kantu=katrakatr. \hspace{45mm}{[2-place]}\\
+             \tikzmark{1}<\textsc{av}>\tikzmark{2}\hspace{+.6mm}tear \textsc{df.pivot} child \textsc{3.poss.acc}=pants  \\
+            \trans `The child tore his/her panst.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Mu-disdis na katrakatr. \hspace{70mm}{[1-place]}\\
+             \tikzmark{1}\textsc{mu}\tikzmark{2}-tear \textsc{df.pivot} pants \\
+            \trans `The pants were torn.'
+            \boxit
+	\end{xlist}
+\end{exe}
+
+\noindent  I will demonstrate in the following discussion that the sequence \textit{mu}- consists of an AV allomorph \textit{m-} and a detransitivizer \textit{u-}, whose presence correlates with the absence of an external argument. The compatibility of the two affixes, as will be shown below, reinforces the transitive analysis of the two-place AV construction. 
+
+The first argument for the bimorphemic analysis of the  \textit{mu-} sequence comes from a shared trait of Philippine-type languages, that every clause must bear a voice affix (14a). Given this constraint, a monomorphemic analysis of the sequence is disfavored, as it entails the undesirable assumption that the \textit{mu-}construction bears no voice morphology, making it an exception to an otherwise well-motivated generalization.
+
+Second, the form of the \textit{m-} component in the \textit{mu-}sequence follows consistently from a common allomorphy rule attested across Formosan languages, that an AV affix must surface in prefix form when attached to a vowel-initial base (60):
+
+
+\begin{exe}
+\ex AV affix\hspace{+2mm}$\longrightarrow$\hspace{+2mm} 
+  \begin{avm}%use this for extended brackets
+  \{\begin{tabular}{ll}
+ \textit{<um>/<m>} & on C-initial bases\\
+ \textit{m-} & on V-initial bases\\
+  \end{tabular}
+  \}
+  \end{avm}%use this for extended brackets
+\hspace{+2.5cm} \textit{Puyuma, Thao}
+\end{exe}
+
+
+
+
+\noindent Given (60), the fact that the affixation of the detransitivizer \textit{u-} creates a vowel-initial base suggests that an AV affix combining with it will appear in prefix form, which is exactly observed with the sequence \textit{m-u-}.
+
+Finally, this analysis is reinforced by instances of the \textit{mu-}constructions that contain a vowel-initial verb. In such cases, the affixal morphology in a two-place AV construction and that in its detransitivized counterpart form a minimal pair, i.e. \textit{m-} and \textit{m-u-}, as seen in (61)-(64). The fact that the presence of an additional component \textit{u-} correlates with the absence of the external argument of the sentence indicates that \textit{u-} is an independent affix responsible for the absence of the external argument.
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll \textbf{M}-apit=ku dra inupidran. \hspace{23mm}{[AV prefix \textit{m-}: 2-place clause]}\\
+             \tikzmark{1}\textsc{av}-pile.up\tikzmark{2}\hspace{+1mm}=\textsc{1sg.pivot} \textsc{id.acc} garland \\
+            \trans `I piled up the garlands.' 
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll \textbf{Mu}-apit na kiruwan. \hspace{40mm}{[\textit{mu-}sequence: 1-place clause]}\\
+             \tikzmark{1}\textsc{mu-}pile.up\tikzmark{2}  \textsc{df.pivot} clothes  \\
+            \trans `The clothes are piled up.' (Cauquelin 2015:60)
+            \boxit
+	\end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex
+		\gll \textbf{M}-a-aleb i Kuadur kana aleban. \hspace{16mm}{[AV prefix \textit{m-}: 2-place clause]}\\
+             \tikzmark{1}\textsc{av-prog}-close\tikzmark{2}  \textsc{sg.pivot} Kuadur \textsc{df.acc} door. \\
+            \trans `Kuadur is closing the door.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll \textbf{Mu}-aleb na aleban. \hspace{47mm}{[\textit{mu-}sequence: 1-place clause]}\\
+             \tikzmark{1}\textsc{mu-}close\tikzmark{2} \textsc{df.pivot} door.  \\
+            \trans `The door is closed.'
+            \boxit
+	\end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex{\textit{Thao}}   
+\begin{xlist}
+\ex
+		\gll Yaku a ma-kan fizfiz, \textbf{m}-ruqit shapa. \hspace{18mm}{[AV prefix \textit{m-}: 2-place clause]}\\
+             \textsc{1sg.pivot} \textsc{lk} \textsc{av-}eat banana \tikzmark{1}\textsc{av}-peel\tikzmark{2} skin \\
+            \trans `I will eat a banana, peel its skin.' 
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll Nak a kuskus \textbf{mu}-ruqit. \hspace{41mm}{[\textit{mu-}sequence: 1-place clause]}\\
+             \textsc{1sg.poss} \textsc{lk} leg \tikzmark{1}\textsc{mu}-peel\tikzmark{2}.  \\
+            \trans `My leg is scratched.' (Blust 2003:848)
+            \boxit
+	\end{xlist}
+\end{exe}
+
+\newpage
+
+\vspace{-2mm}
+\begin{exe}
+\ex {\textit{Thao}}
+    \begin{xlist}
+		\ex
+		\gll Caycay \textbf{m}-rubuz nak a taun. \hspace{25mm}{[AV prefix \textit{m-}: 2-place clause]}\\
+             \textsc{3pl.pivot} \tikzmark{1}\textsc{av}-demolish\tikzmark{2}  \textsc{1sg} \textsc{lk} house.\textsc{acc}  \\
+            \trans `They demolished my house.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll \textbf{Mu}-rubuz na ruza. \hspace{43mm}{[\textit{mu-}sequence: 1-place clause]}\\
+             \tikzmark{1}\textsc{mu-}demolish\tikzmark{2} \textsc{det} boat.\textsc{pivot}  \\
+            \trans `The boat broke down.' (Blust 2003:843)
+            \boxit
+	\end{xlist}
+\end{exe}
+
+It can thus be concluded that \textit{u-} is a valency-indicating affix that marks external argument detransitivization, which combines with an AV prefix \textit{m-} in detransitive clauses. 
+
+\subsection{The structure of the detransitive construction and its implications for the transitivity of two-place AV clauses}
+
+\noindent Given the observations above, I propose accordingly that the detransitivizing affix \textit{u-} is the morphological realization of a defective Voice, which is neither capable of introducing an external argument nor able to assign accusative Case to its internal argument. Therefore, the internal argument in the \textit{mu-}construction receives structural Case from T, as illustrated in (65). 
+
+\begin{exe}
+\ex{\textit{Case-licensing in \textit{m-u-}marked detransitives}}
+
+ \scalebox{.85}{  
+\jtree[xunit=2.8em, yunit=.8em]
+\! = {CP}
+    :{C}                    {TP}
+    :{{\rnode{A3}T}}        {VoiceP}
+    :{$\varnothing$}     {Voice'}
+    :{Voice\textsubscript{[$\varnothing$]}}!a        {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}        {\rnode{A2}{DP\textsubscript{\textsc{ia}}}}.
+
+\!a = <vert>{\textit{\textbf{u-}}} .
+
+  \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{->}{A3}{A2}
+             \mput*{\textsc{nom}}
+\endjtree
+}
+\end{exe}
+
+\bigskip
+
+
+The compatibility of the detransitivizer \textit{u-} and AV-morphology provides novel evidence against the antipassive analysis of two-place AV constructions. In principle, external-argument detransitivization and antipassivization are two valency-decreasing operations that cannot co-occur, as applying both operations to the same two-place clause results in a construction with zero valency. This is illustrated in (66):
+
+
+\begin{exe}
+\ex {\textit{The transitivity of \text{mu}-construction under the antipassive analysis of two-place AV clauses}}
+\begin{xlist}
+		\ex \{AV affix\}-\{V\textsubscript{2-place}\}:\hspace{+3mm}`antipassive' 
+		
+		\ex \{AV affix\}-\{\textit{u}\textsubscript{\textsc{ea detransitivization}}\}-\{V\textsubscript{2-place}\}:\hspace{+3mm}`antipassive' with detransitivization
+	\end{xlist}
+\end{exe}
+
+Under recent formal approaches to valency-decreasing operations, assuming the presence of both operations in the same clause is also infelicitous. Under the ergative analysis of Philippine-type languages (e.g. Aldridge 2004 et seq., Chang 2011; Wu 2013), AV-marked constructions possess an intransitive Voice that licenses an external argument (while being incapable of Case-licensing its internal argument). A \textit{m-u-}marked construction, on the other hand, is necessarily analyzed as containing a Voice incapable of licensing an external argument. The co-occurrence of  AV morphology and the detransitivizer \textit{u-} thus entails the presence of the two different flavors of Voice that are in theory incompatible: the former is assumed to be capable of introducing an external argument, while the latter is not. It can thus be concluded that the presence of the \textit{mu-}construction in Philippine-type languages provides additional evidence against the antipassive analysis of two-place AV constructions.
+
+
+The compatibility of the AV affix with the detransitivizer \textit{u-}, on the other hand, follows straightforwardly from the accusative analysis of Philippine-type languages, according to which AV-morphology realizes an abstract A'-agree relation between [u\textsc{top}] and the nominative DP, which is predicted to be available both with transitives and detransitives/intransitives---exactly what is observed in Philippine-type languages. 
+
+The structure and Case-licensing pattern in a two-place AV clause under the current analysis is illustrated in (67). Following the accusative analysis of Philippine-type languages, the presence of AV-morphology indicates that the nominative DP in the clause is simultaneously the topic of the sentence, whose nominative case is overridden by the topic marker. Therefore, the nominative status (CM\textsubscript{2}) of the external argument in an AV-marked construction is not indicated by argument-marking, resulting in a Pivot-CM\textsubscript{1} pattern in AV constructions.  
+
+\begin{exe}
+\ex{\textit{Case-licensing in two-place AV constructions under the current analysis}}
+
+ \scalebox{.88}{  
+\jtree[xunit=2.8em, yunit=1.2em]
+\! = {CP}
+    :{{\rnode{A5}{C}}{\textsubscript{{[\st{u\textsc{top}}]}}}}  {TP}
+    :{{\rnode{A1}DP\textsubscript{\textsc{ea}}}{\textsubscript{\textsc{[\st{top}]}}}}  {T'}
+    :{{\rnode{A2}T}}                                {VoiceP}
+    :{(DP\textsubscript{\textsc{ea}})}             {Voice'}
+    :{{{\rnode{A3}Voice\textsubscript{\textsc{\{tr\}}}}}} {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}                                        {{\rnode{A4}DP\textsubscript{\textsc{ia}}}}.
+      
+     \nccurve[angleA=-150,
+             angleB=-140,
+             ncurv=1]{<->}{A5}{A1}
+              \mput*{\textsc{\textbf{av affix}: \textit{m-}}}
+   
+    
+    \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{->}{A3}{A4}
+             \mput*{\textsc{acc (cm1)}}
+             
+    \nccurve[angleA=-135,
+             angleB=-90,
+             ncurv=1]{<-}{A1}{A2}
+             \mput*{\textsc{nom (cm2)}}
+\endjtree
+
+}
+\end{exe}
+\bigskip
+
+Crucially, the fact that the languages attested with a \textit{mu-}construction (Puyuma, Thao, Bunun) belong to three different Austronesian primary branches suggests that the compatibility of AV-morphology with valency-decreasing affix is part of the design of the Philippine-type voice system, indicating that prototypical  Philippine-type two-place AV clauses are true transitives.
+
+\subsection{Theoretical implications}
+\noindent The observations on the four constructions discussed so far yield three implications. First, they indicate that the ergative approach to Philippine-type languages is difficult to maintain. As noted in section 2.1, the ergative approach to Philippine-type languages (repeated below in (68)) relies crucially on the putative transitivity distinction between AV and PV clauses, according to which the differences in case-marking and the A'-extraction restriction between AV and PV clauses all result from intransitive Voice's lack of an EPP feature and its inability to assign inherent Case to its external argument. The conclusion that AV-constructions are true transitives thus indicates that this baseline assumption does not hold, revealing that the  ergative approach to Philippine-type languages is untenable.  
+
+\newpage
+
+\begin{exe}
+\ex {\textit{Core assumptions of the ergative approach to Philippine-type languages}}\vspace{-1mm}
+\begin{table}[h]
+\hspace{+1.2cm}\begin{tabular}{ll}
+       \midrule
+    \textbf{AV affix} & reflex of \textbf{intransitive Voice} \\
+    \textbf{PV affix} & reflex of \textbf{transitive Voice} \\\midrule
+    Pivot marker   & \textsc{abs} from T \\
+    CM\textsubscript{1}   &  \textsc{obl} from V\\
+    CM\textsubscript{2} &  \textsc{erg} from \textbf{transitive Voice} (unavailable in AV constructions) \\\midrule
+   
+\end{tabular}
+\end{table}
+\end{exe}
+
+Second, the fact that the external argument in two-place AV clauses may be A'-extracted (see (3)-(4)) reveals that not only Ss and Os but also transitive subjects (As) in Philippine-type languages are accessible to Pivot-marking and A'-extraction, reinforcing the conclusion above that the   ergative-like behaviors of these languages is only illusory, and that the Philippine-type  `Pivot-only' extraction asymmetry cannot be attributed to an `absolutive-only' extraction restriction.  
+
+Finally, it is important to note that the four target constructions that inform the current conclusion are attested across multiple Austronesian primary branches, indicating the present analysis is not language-specific, but is built on the core morphosyntax of the Philippine-type voice system. 
+
+
+
+
+\section{The locus of Philippine-type AV morphology}
+
+\noindent A remaining question in the present analysis is the nature of the Philippine-type AV affix, which, as was revealed in the preceding discussion, cannot be analyzed as an intransitive marker (Payne 1982; Mithun 1994; Aldridge 2004 et seq.). In this section, I focus specifically on a core assumption of the accusative approach to Philippine-type languages, that Philippine-type `voice' affixes are A'-agreement morphology hosted at C, and demonstrate that Formosan languages provide novel empirical evidence for this analysis.
+
+As noted in section 2, Philippine-type voice affixes are traditionally viewed as transitivity- indicating morphology hosted at Voice. This analysis, however, contradicts two observations from the constructions discussed in sections 3 and 4. First, the fact that an AV affix may co-occur with a detransitivizer---which is necessarily analyzed as a valency-indicating affix hosted at Voice---suggests that the AV affix that co-occurs with it cannot be analyzed as the reflex of Voice. Second, the observation that bi-eventive causatives in Philippine-type languages possess two independent VoicePs but exhibit only one voice affix additionally shows that Philippine-type voice morphology does not mark Voice.
+
+
+ 
+If the accusative approach to Philippine-type languages is on the right track, an AV affix is the spell-out of nominative Case agreement, whose presence indicates that the nominative DP of a clause is the topic of the sentence (Chung 1994, 1998; Richards 2000; Pearson 2001, 2005; Rackowski \& Richards 2005; Chen 2017). This analysis is illustrated in (69a-b), which present the Case-licensing pattern in a two-place AV construction and a \textit{m-u-}marked detransitive, respectively. 
+
+\newpage
+
+\begin{exe}
+\ex{\textit{The structure of AV-marked transitives and detransitives under the accusative analysis}}\\
+\begin{minipage}{.4\textwidth}
+\begin{enumerate}
+ \item[a.] \textit{Two-place AV construction} \\
+\scalebox{0.8}{   %put this to scale objects/figures
+\jtree[xunit=2.8em, yunit=1.2em]
+\! = {CP}
+    :{{\rnode{A5}{C}}{\textsubscript{{[\st{u\textsc{top}}]}}}}  {TP}
+    :{{\rnode{A1}DP\textsubscript{\textsc{ea}}}{\textsubscript{\textsc{[\st{top}]}}}}  {T'}
+    :{{\rnode{A2}T}}                                {VoiceP}
+    :{(DP\textsubscript{\textsc{ea}})}             {Voice'}
+    :{{{\rnode{A3}Voice\textsubscript{\textsc{\{tr\}}}}}} {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}                                        {{\rnode{A4}DP\textsubscript{\textsc{ia}}}}.
+      
+     \nccurve[angleA=-150,
+             angleB=-140,
+             ncurv=1]{<->}{A5}{A1}
+              \mput*{\textsc{\textbf{av affix}}}
+   
+    
+    \psset{linestyle=dashed,arrows=->}
+    \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{->}{A3}{A4}
+             \mput*{\textsc{acc}}
+             
+    \nccurve[angleA=-135,
+             angleB=-90,
+             ncurv=1]{<-}{A1}{A2}
+             \mput*{\textsc{nom}}
+\endjtree
+}
+\end{enumerate}
+\end{minipage}% This must go next to `\end{minipage}`
+\begin{minipage}{.4\textwidth}
+\begin{enumerate}
+  \item[b.] \textit{AV-marked detransitive}\\
+\scalebox{0.8}{   %put this to scale objects/figures
+\jtree[xunit=2.8em, yunit=1.2em]
+\! = {CP}
+    :{{\rnode{A5}{C}}{\textsubscript{{[\st{u\textsc{top}}]}}}}  {TP}
+    :{{\rnode{A7}DP\textsubscript{\textsc{ia}{\textsc{[\st{top}]}}}}}  {T'}
+    :{{\rnode{A1}T}}                                {VoiceP}
+    :{{\rnode{A6}{$\varnothing$}}}  {Voice'}
+    :{{Voice{\textsubscript{[$\varnothing$]}}}}!a {\textit{v}P}
+    :{{\textit{v'}}}                             {VP}
+    :{V}                                         {\rnode{A2}{(DP\textsubscript{\textsc{ia}})}}.
+  
+  \!a = <vert>{\textit{\textbf{u-}}} .
+
+   \nccurve[angleA=-150,
+             angleB=-150,
+             ncurv=1]{<->}{A5}{A7}
+              \mput*{\textsc{\textbf{av affix}}}
+     \psset{linestyle=dashed,arrows=->}
+     \nccurve[angleA=-135,
+             angleB=-90,
+             ncurv=1]{->}{A1}{A7}
+             \mput*{\textsc{nom}}
+  
+\endjtree
+}
+\end{enumerate}
+\end{minipage}%
+
+\end{exe}
+\bigskip
+
+
+This analysis correctly captures the availability of AV-morphology in both transitives (70a) and detransitives/intransitives (70b-c), and provides a straightforward account of both the non-omitability of AV objects in Philippine-type languages, as well as the fact that bi-eventive causatives in these languages contain only one voice affix.  
+
+
+\begin{exe}
+\ex {\textit{Puyuma}}
+    \begin{xlist}
+		\ex 
+		\gll M-a-abelr i Atrung dra kulrang.\hspace{+28mm}{[\textit{transitive}]}\\
+             \tikzmark{1}\textsc{av-prog}-cook\tikzmark{2} \textsc{sg.pivot} Atrung \textsc{id.cm}\textsubscript{1}=\textsc{acc} vegetable  \\
+            \trans `Atrung is cooking vegetables.'
+            \boxit %make the first box for the first two numbers
+           % if there are more boxes in one example, specify what the first mark is
+           % like \boxit*{put number here}
+			\ex
+		\gll M-u-trekelr la na eraw.\hspace{+56mm}{[\textit{detransitive}]}\\
+             \tikzmark{1}\textsc{mu-detr}-drink\tikzmark{2} \textsc{prf} \textsc{df.pivot} alcohol  \\
+            \trans `The alcohol was drunk up.' 
+            \boxit
+     	\ex
+		\gll M-uarak i Atrung i Arasip.\hspace{+50mm}{[\textit{intransitive}]}\\
+             \tikzmark{1}\textsc{av}-dance\tikzmark{2} \textsc{sg.pivot} Atrung \textsc{loc} Arasip  \\
+            \trans `Atrung danced in Arasip.' 
+            \boxit
+	\end{xlist}
+\end{exe}
+
+
+Finally, it is important to note that the morphological patterning of Philippine-type Formosan languages lends novel support to this analysis. According to the Mirror Principle, there is a one-to-one correlation between the linear ordering of verbal grammatical-function-changing morphology, the syntactic behavior of the arguments of the resulting verb form, and the semantic interpretation of the entire structure (Baker 1985; Harley 2013). If this principle holds, Philippine-type AV morphology is predicted to be located farther from a root compared to valency-indicating morphology and aspect-denoting morphology---if it is indeed A'-agreement hosted at C. 
+
+This prediction is indeed borne out. Across Seediq, Thao, and Puyuma, AV morphology consistently appears to the left of aspect morphology, suggesting that it is hosted in a functional projection higher than AspectP. As seen in (71) and (72), in both Seediq and Thao, the AV infix \textit{<m>}  obligatorily appears the left of perfective morphology (\textit{<n>} in Seediq and \textit{<in>} in Thao).
+
+\newpage
+
+\begin{exe}
+\ex {\textit{Seediq}}
+\begin{table}[h]
+\hspace{+1cm}\begin{tabular}{lll} % these are lowercase Ls 
+     a. AV form (neutral) & b. AV form (perfective) &  
+     \\
+    \hspace{+5mm}\textit{<m>\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \textit{<m><n>\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \\\midrule
+    d\textbf{<m>}engu   & d\textbf{<m><n>}engu  & `roast'               \\
+    k\textbf{<m>}eeki    &  k\textbf{<m><n>}eeki & `dance' \\
+    s\textbf{<m>}eeliq & s\textbf{<m><n>}eeliq & `butcher'\\
+    s\textbf{<m>}ipaq & s\textbf{<m><n>}ipaq & `kill'\\
+    t\textbf{<m>}inun & t\textbf{<m><n>}inun & `weave' \\ \bottomrule 
+\end{tabular}
+\end{table}
+\end{exe}
+
+\begin{exe}
+\ex {\textit{Thao}}
+\begin{table}[h]
+\hspace{+1cm}\begin{tabular}{lll} % these are lowercase Ls 
+     a. AV form (neutral) & b. AV form (perfective) &  
+     \\
+    \hspace{+5mm}\textit{<m>\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \textit{<m><in>\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \\\midrule
+   h<\textbf{m>}adu  & h\textbf{<m><in>}atu  & `hold in the hand'               \\
+     k<\textbf{m>}acu  & k\textbf{<m><in>}acu  & `bring'  \\
+     lh<\textbf{m>}iza  & lh\textbf{<m><in>}iza  & `plait'  \\
+     q<\textbf{m>}aquitilh  & q\textbf{<m><in>}aqutilh  & `chase'  \\
+      s<\textbf{m>}isiqan  & s\textbf{<m><in>}isiqan  & `lean against something'  \\
+    t<\textbf{m>}anwari  & t\textbf{<m><in>}anwari  & 'trespass upon'  \\\bottomrule 
+ 
+\end{tabular}
+\end{table}
+\end{exe}
+
+The morphological pattern of Puyuma reinforces this generalization. In Puyuma, the AV infix \textit{<em>} is obligatorily inserted to the second position of a root immediately following the onset consonant, creating the syllable structure \textit{C<em>V}. Progressive aspect in the language, on the other hand, is formed through Ca-reduplication, which creates an additional syllable attached to the left of the root. When an AV-marked verb bears progressive morphology, the AV infix is obligatorily inserted into the syllable formed through Ca-reduplication (73), indicating that it is inserted after aspect morphology. If the Mirror Principle holds, this ordering mirrors the derivation of associated syntactic operations, suggesting that AV morphology is indeed hosted at C.
+
+
+
+\begin{exe}
+\ex {\textit{Puyuma: progressive AV verb forms with a C-initial root}}
+\begin{table}[h]
+\hspace{+1cm}\begin{tabular}{lll} % these are lowercase Ls 
+     a. AV form  & b. AV form (progressive) & \vspace{+1mm} 
+     \\
+    \hspace{+5mm}\textit{<em>\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \textit{C<em>a-\hspace{-1mm}\[
+    \sqrt{\vphantom{^2}}
+    \]} & \\\midrule
+   d<\textbf{em>}eru  & d\textbf{<em>}a-deru  & `cook'               \\
+     g<\textbf{em>}isgis  & g\textbf{<em>}a-gisgis  & `shave with a razor'  \\
+      k<\textbf{em>}aratr  & k\textbf{<em>}a-karatr  & `bite'  \\
+     s<\textbf{em>}absab  & s\textbf{<em>}a-sabsab  & `wash'  \\
+      t<\textbf{em>}enun  & t\textbf{<em>}a-tenun  & `weave'  \\ \bottomrule 
+\end{tabular}
+\end{table}
+\end{exe}
+
+The two morphological patterns discussed above thus lend novel empirical support to the A'-approach to AV-morphology, and reinforce the accusative approach to Philippine-type Austronesian languages.
+
+\section{Conclusion}
+
+\noindent This paper has examined a controversial construction found across Philippine-type Austronesian languages known as the Actor voice, which is traditionally analyzed as an antipassive and has therefore motivated an ergative view of Philippine-type languages. I demonstrated that the construction is a true transitive, drawing on both the accusative behavior of the Case assigned to the putative antipassive objects and the construction's compatibility with external argument detransitivization. I showed accordingly that the ergative-like characteristics of these languages are only apparent. Finally, I presented new evidence for a core assumption of the accusative approach to Philippine-type languages, that Philippine-type Actor Voice morphology is A'-agreement affix hosted at C.
+
+
+
+\nocite{*} %print all citations, even if they are not cited in the paper
+\bibliography{ref.bib} %make the bibliography
+
+\end{document}
+
